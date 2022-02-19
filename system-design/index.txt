@@ -1,0 +1,4 @@
+1. horizontal and vertical scaling
+2. load balancing
+3. caching
+4. cache invalidation

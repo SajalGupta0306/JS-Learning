@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* flexbox is one dmension: either horizontal or vertical*/
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+
+      section {
+        width: 100%;
+        background: pink;
+      }
+
+      section div {
+        width: 30%;
+        padding: 20px;
+        border: 1px solid black;
+        /* align-items:flex-end; */
+      }
+
+      .test1 {
+        /* flex: 1; */ /* takes 1/4 portion of section */
+
+        background-color: orange;
+      }
+
+      .test2 {
+        /* flex: 2; */ /* takes 2/4 portion of section */
+        background-color: white;
+        color: blue;
+      }
+
+      .test3 {
+        /* flex: 2; */ /* takes 1/4 portion of section */
+        background-color: green;
+      }
+
+      /*  after min-width of 768, the page behaves responsive for different screens */
+      @media (min-width: 768px) {
+        section {
+          display: flex;
+          /* flex-direction: row; */
+          justify-content: space-between; /* works horizontally*/
+          align-items: center; /* works vertically */
+        }
+      }
+
+      /*  flex-wrap : adjusts the contents of screen according to the width, if media queries are not used*/
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="test1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At eum est aut
+        dolorem odio.
+      </div>
+      <div class="test2">
+        Lorem ipsum dolor sit amet consectetur adipisicing.
+      </div>
+      <div class="test3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At eum est aut
+        dolorem odio.
+      </div>
+    </section>
+  </body>
+</html>
