@@ -2,3 +2,17 @@
 2. load balancing
 3. caching
 4. cache invalidation
+5. CDN
+5. ACID
+
+
+
+
+
+step 1 : discuss on the functional and non - functional requirements 
+step 2: discuss the use-case by assuming the number of users and how many times application will be accessed 
+step 3: discuss on how the UI would look like
+step 4: discuss on the apis required to communicate between the FE and BE
+step 5: discuss on the db models which might be needed and link with DB (SQL or NOSQL) / Object Store - blob storage like S3 (Storing Images)
+step 6: design a HLD
+step 7: scale the HLD by adding load balancer,  doing horizontal scaling or adding caching and CDN

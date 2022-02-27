@@ -24,8 +24,8 @@ function main() {
 main();
 
 // eg 2: using setTimeout
-// setTimeout holds the lexical scope of i (reference of i) and at the end of each setTimeout, value of i is 1 ,2,3,4,5,
-// therefore it prints i 1,2,3,4,5  (different memory location because of let)
+// setTimeout holds the lexical scope of i (reference of i) and at the end of each setTimeout, value of i is 0,1,2,3,4
+// therefore it prints i 0,1,2,3,4  (different memory location because of let)
 function temp() {
   for (let x = 0; x < 5; x++) {
     setTimeout(() => {

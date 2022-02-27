@@ -24,5 +24,5 @@ printName.apply(user1, ["Ynr"]);
 
 // bind: returns a copy as a function
 // syntax: same as call
-const print = printName.bind(user1, "Ynr");
-print();
+const print = printName.bind(user1);
+print("Ynr");
