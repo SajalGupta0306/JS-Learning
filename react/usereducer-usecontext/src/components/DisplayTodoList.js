@@ -1,20 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import appContext from "../context/appContext";
 
-export default function DisplayTodoList({
-  payload,
-  updateColor,
-  deleteTodoItem,
-  index,
-}) {
+export default function DisplayTodoList({ payload, index }) {
   const styles = {
     marginLeft: "15px",
   };
 
+  const { updateColor, deleteTodoItem } = useContext(appContext);
+
   return (
     <>
-      <div>
-        {/* <span style={{ color: donePressed ? "green" : "red" }}>{payload.value}</span> */}
-        <label style={{ color: payload.done ? "green" : "black" }}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <label
+          style={{ width: "15rem", color: payload.done ? "green" : "black" }}
+        >
           {payload.value}
         </label>
         <button onClick={() => updateColor(payload.id)} style={styles}>
