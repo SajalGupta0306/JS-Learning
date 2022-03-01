@@ -1,60 +1,42 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import Context from "./appContext";
+import todoReducer from "./todo-reducer";
+import { ADD_TODO, DELETE_TODO, MARK_DONE } from "./todoActions";
 
 export default function AppState(props) {
-  const [todoText, setTodoText] = useState("");
-  const [todoList, setTodoList] = useState([]);
-  const [buttonDisable, setButtonDisable] = useState(true);
+  const initialState = {
+    todo: [],
+  };
+  const [state, dispatch] = useReducer(todoReducer, initialState);
 
-  const addTodo = () => {
-    const data = [...todoList];
-    data.push({
-      id: data.length,
-      value: todoText,
-      done: false,
+  const addNewTodo = (todo) => {
+    dispatch({
+      type: ADD_TODO,
+      payload: todo,
     });
-    setTodoList(data);
-    setTodoText("");
-    setButtonDisable(true);
   };
 
-  const changeButtonVisibility = (e) => {
-    if (e.target.value === "") {
-      setButtonDisable(true);
-      setTodoText("");
-    } else {
-      setTodoText(e.target.value);
-      setButtonDisable(false);
-    }
-  };
-
-  const updateColor = (id) => {
-    const data = [...todoList];
-    data.forEach((val) => {
-      if (val.id === id) {
-        val.done = true;
-      }
+  const toggleTodo = (id) => {
+    dispatch({
+      type: MARK_DONE,
+      payload: id,
     });
-    setTodoList(data);
   };
 
-  const deleteTodoItem = (index) => {
-    const data = [...todoList];
-    data.splice(index, 1);
-    setTodoList(data);
+  const deleteTodo = (id) => {
+    dispatch({
+      type: DELETE_TODO,
+      payload: id,
+    });
   };
 
   return (
     <Context.Provider
       value={{
-        todoText,
-        setTodoText,
-        todoList,
-        addTodo,
-        updateColor,
-        deleteTodoItem,
-        changeButtonVisibility,
-        buttonDisable,
+        todos: state.todo,
+        addNewTodo,
+        toggleTodo,
+        deleteTodo,
       }}
     >
       {props.children}

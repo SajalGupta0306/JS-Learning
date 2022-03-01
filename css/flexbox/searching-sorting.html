@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Tutorial</title>
+    <script>
+      let ascending = true;
+
+      const myFunction = () => {
+        const inputVal = document.getElementById("myInput").value;
+        const ulList = document.getElementById("myUL");
+        const liList = ulList.getElementsByTagName("li");
+        for (let i = 0; i < liList.length; i++) {
+          if (
+            liList[i].innerText.toLowerCase().includes(inputVal.toLowerCase())
+          ) {
+            liList[i].style.display = "";
+          } else {
+            liList[i].style.display = "none";
+          }
+        }
+      };
+
+      const sortList = () => {
+        ascending = !ascending;
+        const sortedList = [];
+        const ulList = document.getElementById("myUL");
+        const liList = ulList.getElementsByTagName("li");
+        for (let i = 0; i < liList.length; i++) {
+          sortedList.push(liList[i].innerText);
+        }
+        if (ascending) {
+          sortedList.sort();
+        } else {
+          sortedList.sort();
+          sortedList.reverse();
+        }
+        for (let i = 0; i < sortedList.length; i++) {
+          liList[i].innerHTML = sortedList[i];
+        }
+      };
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .test {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test">
+      <div>
+        <input
+          type="text"
+          id="myInput"
+          onkeyup="myFunction()"
+          placeholder="Search for names.."
+        />
+      </div>
+      <ul id="myUL">
+        <li>Calvin</li>
+        <li>Adele</li>
+        <li>Cindy</li>
+        <li>Agnes</li>
+        <li>Christina</li>
+      </ul>
+      <br />
+      <div>
+        <button onclick="sortList()">Sort</button>
+      </div>
+    </div>
+  </body>
+</html>

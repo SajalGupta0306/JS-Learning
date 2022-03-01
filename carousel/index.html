@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <style>
+      #carouselDiv {
+        display: flex;
+        justify-content: center;
+        height: 250px;
+        width: 450px;
+        border: 2px solid black;
+        padding: 5px;
+        position: relative;
+      }
+
+      #imageDiv,
+      #imagePlaceholder {
+        height: 100%;
+        width: 100%;
+      }
+
+      #carouselButtonDiv {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        display: flex;
+        justify-content: space-between;
+        width: 94%;
+      }
+
+      .carouselButtons {
+        background: #92fb244f;
+        cursor: pointer;
+        border-radius: 20px;
+        width: 15px;
+        display: flex;
+        justify-content: center;
+        color: white;
+        border: 1px solid #b3b3b3;
+      }
+
+      .dotContainer {
+        position: absolute;
+        height: auto;
+        bottom: 10px;
+      }
+
+      .dot {
+        margin-right: 10px;
+        border-radius: 50%;
+        height: 8px;
+        width: 8px;
+        float: left;
+        border: 1px solid #343434;
+      }
+
+      .selectedDot {
+        background-color: white;
+      }
+    </style>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div id="carouselDiv">
+      <div id="imageDiv">
+        <img
+          id="imagePlaceholder"
+          alt="No Image Available"
+          src="https://picsum.photos/id/100/200/300"
+        />
+      </div>
+      <div id="carouselButtonDiv">
+        <a
+          id="previousButton"
+          class="carouselButtons"
+          onclick="goToPreviousImage()"
+        >
+          <
+        </a>
+        <a id="nextButton" class="carouselButtons" onclick="goToNextImage()">
+          >
+        </a>
+      </div>
+      <div id="dotDiv" class="dotContainer">
+        <span class="dot selectedDot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </body>
+</html>
