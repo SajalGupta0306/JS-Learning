@@ -1,4 +1,5 @@
 // prototyping and prototyping chain
+// Prototype chaining is used to build new types of objects based on existing ones. It is similar to inheritance in a class based language.
 
 // array
 // const arr = ["Sajal"];

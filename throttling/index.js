@@ -1,5 +1,6 @@
 // throttling : used for performance enhancment by limiting the requests which are triggered from client
 // triggered on regular intervals - based on intervals
+// Throttling will delay executing a function. It will reduce the notifications of an event that fires multiple times.
 
 // Defining event listener function
 function displayWindowSize() {
@@ -20,10 +21,10 @@ const throttleWindowSize = (func, delay) => {
     if (firstCall) {
       func();
       firstCall = false;
+      setTimeout(() => {
+        firstCall = true;
+      }, delay);
     }
-    setTimeout(() => {
-      firstCall = true;
-    }, delay);
   };
 };
 

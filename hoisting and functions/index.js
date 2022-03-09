@@ -1,4 +1,6 @@
 // hoisting: accessing the variables or functions before initializing it
+// variables and function declarations are moved to the top of their scope before code execution
+//  JavaScript only hoists declarations, not initialisation
 
 // x  is undefined because memory allocation is done even before program runs and default value assigned in "undefined"
 // getname() gets function assigned, as a result it displays the value
@@ -40,6 +42,10 @@ var c = function (value) {
 };
 
 c(test);
+
+// first order functions
+// functions which dont take another function as argument or return fnctions 
+// eg: console.log
 
 // higher order functions
 // function which takes func as an argument and returns functions as an argument

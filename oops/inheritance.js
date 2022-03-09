@@ -7,6 +7,8 @@ Book.prototype.getDetails = function () {
   return `The title of book is ${this.title}. The author is ${this.author}`;
 };
 
+const test = new Book("dsfds", "dff");
+
 // to use prototypes of book, it needs to be associated with magazine
 // should be done before instantiation of Magazine
 Magazine.prototype = Object.create(Book.prototype);

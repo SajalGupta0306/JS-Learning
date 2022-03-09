@@ -9,10 +9,12 @@ function App() {
       <h1>Welcome to useContext Example</h1>
       <div>
         <h1>This is the Home Page</h1>
+        {/* Router internally handles the routing logic. */}
         <Router>
           <nav>
             <ul>
               <li>
+                {/* Link creates HTML links to the actual pages  */}
                 <Link to="/home">Home</Link>
               </li>
               <li>
@@ -21,6 +23,8 @@ function App() {
             </ul>
           </nav>
           <AppState>
+            {/* Routes defines the set of routes  */}
+            {/* Route defines individual route  */}
             <Routes>
               <Route exact path="/home" element={<Home />} />
               <Route exact path="/feeds" element={<Feed />} />

@@ -1,3 +1,5 @@
+const MyPromise = require("./MyPromise");
+const MyPromiseMultipleThen = require("./MyPromiseMultipleThen");
 // map
 
 const arr = [1, 2, 3, 4];
@@ -67,23 +69,82 @@ function sum(a, b) {
   return a + b;
 }
 
-console.log(customReduce(sum, 0));
+// console.log(customReduce(sum, 0));
 
 // bind
 let obj = {
-  name: 'Jack',
+  name: "Jack",
 };
 
 let myFunc = function (id, city) {
-  console.log(`${this.name}, ${id}, ${city}`);  
+  console.log(`${this.name}, ${id}, ${city}`);
 };
 
 Function.prototype.myBind = function (obj, ...args) {
-  let func = this;
+  const func = this;
   return function (...newArgs) {
     func.apply(obj, [...args, ...newArgs]);
   };
 };
 
-let newFunc = myFunc.myBind(obj, 'a_random_id')
-newFunc('New York') 
+const newFunc = myFunc.myBind(obj, "a_random_id");
+
+newFunc("New York");
+
+// prmoises
+// 1. with sync data in resolve
+// 2. with async data in resolve
+// 3. with reject scenario
+// 4. with finally scenario
+
+//1.
+
+// const MyPromise = function (executor) {
+//   let isResolved = false;
+//   let resolvedData;
+
+//   function resolve(value) {
+//     resolvedData = value;
+//     isResolved = true;
+//   }
+
+//   this.then = function (fn) {
+//     if (isResolved) {
+//       fn(resolvedData);
+//     }
+//     return this;
+//   };
+
+//   executor(resolve);
+//   executor(reject);
+// };
+
+// new MyPromise((resolve) => {
+//   resolve(10);
+// })
+//   .then((data) => {
+//     console.log(`data is ${data}`);
+//   })
+//   .then((value) => {
+//     console.log(`value is ${value}`);
+//   });
+
+new MyPromise((resolve) => {
+  setTimeout(() => {
+    resolve(10);
+  }, 1000);
+}).then((data) => {
+  console.log(`data is ${data}`);
+});
+
+new MyPromiseMultipleThen((resolve) => {
+  setTimeout(() => {
+    resolve(20);
+  }, 1000);
+})
+  .then((data) => {
+    return data * 5;
+  })
+  .then((data) => {
+    console.log(`data is ${data}`);
+  });

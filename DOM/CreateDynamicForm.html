@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      const addComment = () => {
+        let div = document.getElementById("commentDiv");
+        const inputElem = document.createElement("input");
+        const commInputElem = document.createElement("textarea");
+        const nameLabel = document.createElement("label");
+        const commentLabel = document.createElement("label");
+        const submitButton = document.createElement("button");
+        const br = document.createElement("br");
+        submitButton.setAttribute("type", "button");
+        submitButton.innerHTML = "Submit";
+
+        submitButton.addEventListener("click", function () {
+            console.log("dsfsdfds");
+        })
+
+        nameLabel.innerHTML = "Name:";
+
+        commentLabel.innerHTML = "Comment:";
+        inputElem.setAttribute("placeholder", "Enter your name");
+        commInputElem.setAttribute("placeholder", "Enter your comment");
+        div.appendChild(nameLabel);
+        div.appendChild(inputElem);
+        div.appendChild(commentLabel);
+        div.appendChild(commInputElem);
+        div.appendChild(br);
+        div.appendChild(submitButton);
+      };
+      console.log(document.querySelector("div"));
+
+    </script>
+  </head>
+  <body>
+    <form>
+      <input type="button" value="Add a new comment" onclick="addComment()" />
+      <br />
+      <br />
+      <div
+        id="commentDiv"
+        style="display: flex; flex-direction: column; width: 25%"
+      >
+        <button abcd="asdsa" class="btn">sfsfjsfsf</button>
+    </div>
+    </form>
+  </body>
+</html>

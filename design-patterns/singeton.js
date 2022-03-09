@@ -1,19 +1,28 @@
-class MySingletonClass {
+class User {
   constructor() {
-    if (MySingletonClass._instance) {
-      throw new Error(
-        "Singleton classes can't be instantiated more than once."
-      );
+    if (!User._instance) {
+      this._data = [];
+      User._instance = this;
     }
-    MySingletonClass._instance = this;
-    // Further code
+    return User._instance;
+  }
+  add(item) {
+    this._data.push(item);
+  }
+
+  get(id) {
+    return this._data.find((d) => d.id === id);
   }
 }
 
-// var instanceOne = new MySingletonClass(); // Executes succesfully
-// console.log(instanceOne);
-// var instanceTwo = new MySingletonClass(); // Throws error
-// console.log(instanceTwo);
+var instanceOne = new User(); // Executes succesfully
+Object.freeze(instanceOne);
+instanceOne.add({ name: "Sajal", id: 1 });
+console.log(instanceOne);
+var instanceTwo = new User(); // Throws error
+instanceTwo.add({ name: "Gupta", id: 2 });
+console.log(instanceTwo);
+
 const DatabaseConnection = (() => {
   let isDatabaseInstanceAvailable = false;
   function createIntance() {
@@ -36,8 +45,8 @@ const DatabaseConnection = (() => {
   };
 })();
 
-const database = DatabaseConnection;
-database.open();
-database.open();
-database.close(); //close database
-database.open();
+// const database = DatabaseConnection;
+// database.open();
+// database.open();
+// database.close(); //close database
+// database.open();
