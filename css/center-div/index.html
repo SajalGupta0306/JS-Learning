@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .parent_div {
+        width: 100vw;
+        height: 100vh;
+        background-color: red;
+
+        /* first way */
+        /* position: relative; */
+
+        /* second way */
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+
+        /* third way */
+        display: grid;
+        place-items: center;
+      }
+
+      .child_div {
+        width: 40vw;
+        height: 70vh;
+        background-color: blue;
+        color: white;
+
+        /* centering h1 inside div : 1st way*/
+        /* display: flex;
+        align-items: center;
+        justify-content: center;  */
+
+        /* centering h1 inside div : 3rd way*/
+        display: grid;
+        place-items: center;
+
+        /* centering h1 inside div : 2nd way*/
+        /* position: relative; */
+
+        /* first way */
+        /* position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white; */
+      }
+
+      /* .child_div h1 {
+        centering h1 inside div : 2nd way 
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="parent_div">
+      <div class="child_div"><h1>Centering a Div</h1></div>
+    </div>
+  </body>
+</html>

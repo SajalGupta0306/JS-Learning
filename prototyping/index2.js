@@ -29,8 +29,8 @@ console.log(pet); // returns Dog {name: "germanShepard", type: 1, sound: "bow"}
 Dog.prototype = Object.create(Animal.prototype);
 Dog.prototype.constructor = Dog;
 var pet = new Dog("germanShepard", animalGroups.MAMMAL);
-
 // Now shout method is available
+
 pet.shout(); // germanShepard is bowing.
 pet.constructor; // returns Animal
 Dog.prototype.constructor; // returns Animal

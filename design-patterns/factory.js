@@ -1,5 +1,7 @@
 // 1. Creational Design Pattern which provides generic interface for creating objects
 // 2. A factory is an object or class or a function in a functional programming paradigm for creating objects.
+// factory pattern can help centralize our object creation process by encapsulating all our constructor or class initialization logic
+// https://blog.sessionstack.com/how-javascript-works-the-factory-design-pattern-4-use-cases-7b9f0d22151d
 
 const Laptop = function ({ ram, hdd, name }) {
   this.ram = ram || 0;
@@ -16,7 +18,7 @@ const Tablet = function ({ ram, hdd, name, network }) {
 
 // Factory Function
 const createGadget = function (gadgetType, attributes) {
-  let returnValue = null;
+  let returnValue;
   if (gadgetType === "Laptop") {
     returnValue = new Laptop(attributes);
   } else if (gadgetType === "Tablet") {

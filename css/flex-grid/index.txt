@@ -1,0 +1,9 @@
+// flexbox
+
+1. it is one dimentional (horizontal or vertical). Either row based or column based
+2. if you want your content shape your layout
+
+// grid
+
+1. it is two dimentional (horizontal and vertical). Either row based or column based
+2.  if you want your layout shape your content

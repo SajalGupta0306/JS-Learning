@@ -39,3 +39,13 @@ function temp() {
   }
 }
 temp();
+
+/// closure example
+
+const Adder = () => {
+  let result = 0;
+  return function (...args) {
+    result = args.reduce((acc, val) => acc + val, result);
+    return result;
+  };
+};

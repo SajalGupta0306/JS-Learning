@@ -4,15 +4,15 @@
 // Eg without pipe
 
 function addby2(val) {
-  return (val += 2);
+  return val + 2;
 }
 
 function mulBy2(val) {
-  return (val *= 2);
+  return val * 2;
 }
 
 function subBy2(val) {
-  return (val -= 2);
+  return val - 2;
 }
 
 const result = addby2(4);
@@ -39,5 +39,15 @@ const pipe = function (...functions) {
   };
 };
 
-const data = pipe(addby2, mulBy2, subBy2)(4);
-console.log(data);
+const compose = function (...functions) {
+  return function (value) {
+    return functions.reduceRight((curr, currentFunction) => {
+      return currentFunction(curr);
+    }, value);
+  };
+};
+
+const data_pipe = pipe(addby2, mulBy2, subBy2)(4);
+const data_compose = compose(addby2, mulBy2, subBy2)(4);
+console.log(data_pipe);
+console.log(data_compose);

@@ -54,20 +54,36 @@ const reduceArr = arr.reduce((acc, val) => {
 // console.log(reduceArr);
 
 // custom reduce
-function customReduce(callback, initialValue) {
-  if (arr.length === 0) {
-    return "No elements in the array";
-  }
-  let previous = initialValue;
-  for (let i = previous ? 0 : 1; i < arr.length; i++) {
-    previous = callback(previous ? previous : arr[0], arr[i], i, arr);
-  }
-  return previous;
-}
+// https://jsfiddle.net/sbmqh1rg/1/
 
-function sum(a, b) {
-  return a + b;
-}
+// function customReduce(callback, initialValue) {
+//   if (arr.length === 0) {
+//     return "No elements in the array";
+//   }
+//   let previous = initialValue;
+//   for (let i = previous ? 0 : 1; i < arr.length; i++) {
+//     previous = callback(previous ? previous : arr[0], arr[i], i, arr);
+//   }
+//   return previous;
+// }
+
+Array.prototype.ownReduce = function (callback, initialValue) {
+  let accumulator = initialValue;
+  for (let i = 0; i < this.length; i++) {
+    accumulator = accumulator
+      ? callback(accumulator, this[i], i, this)
+      : this[i];
+  }
+  return accumulator;
+};
+
+const result = arr.ownReduce((acc, currVal) => {
+  return acc + currVal;
+}, 50);
+
+// function sum(a, b) {
+//   return a + b;
+// }
 
 // console.log(customReduce(sum, 0));
 
