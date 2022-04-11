@@ -22,14 +22,13 @@ function Dog(name, type) {
   this.sound = "bow";
 }
 
-var pet = new Dog("germanShepard", animalGroups.MAMMAL);
-console.log(pet); // returns Dog {name: "germanShepard", type: 1, sound: "bow"}
-// Link prototype chains
-
 Dog.prototype = Object.create(Animal.prototype);
 Dog.prototype.constructor = Dog;
+
 var pet = new Dog("germanShepard", animalGroups.MAMMAL);
 // Now shout method is available
+console.log(pet); // returns Dog {name: "germanShepard", type: 1, sound: "bow"}
+// Link prototype chains
 
 pet.shout(); // germanShepard is bowing.
 pet.constructor; // returns Animal

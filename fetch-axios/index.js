@@ -89,7 +89,7 @@ if (responseOK) {
       console.log('ERROR. Something went wrong.')
       return;
     }
-    var payload = JSON.parse(xhr.response)
+    var payload = JSON.parse(xhr.response);
     console.log(payload);
   }
   xhr.onError = function() {

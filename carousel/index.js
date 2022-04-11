@@ -1,3 +1,5 @@
+// carousel
+
 const imageFolder = [
   "https://picsum.photos/id/100/200/300",
   "https://picsum.photos/id/1024/200/300",

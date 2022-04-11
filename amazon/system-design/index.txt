@@ -1,0 +1,25 @@
+broadly categorize the problem in below steps:
+
+1. General Requirements - discuss with the interviewer
+2. Specific Requirements - Functional requirements (product side requirements) / non-functional (techincal side requirements)
+3. Architecture Overview - Frontend UX mockup can be shown, flow chart can be shown (dependency graph)
+4. Data entities - basically metadata for the table data which are used.
+5. Data APIs -  GET/POST api endpoints which will be consumed in Frontend  (REST/GRAPHQL)
+6. Communication Protocols between  Client to server connection - long polling or web sockets or sse (server sent events)
+7. Support for infinite scroll/ pagination - use-cases specific, not applicable for all situations
+8. Optimization - Network, Javascript
+    Network - Use CDN for cahing images and videos, use HTTP2 protocol (supports multiplexing - parallel connections), 
+               webpack for bundling applications, SSR or CSR, preload/prefetch, look for criticl and non-critical resources
+               image optimizer service 
+    javascript -web workers for heavy work, code splitting, lazy loading, load scripts (Defer/Async), 
+                efficient CSS naming, load scripts at the end
+    Caching - server side caching, client side caching, CDN etc
+9. Accessibility - 
+    1. support different color schemes
+    2. tooltips for user defined elements - input, text area etc
+    3. Alt atribute for images
+    4. support for hot keys which fulfill basic functionalities
+    5. aria-liv for live fields change
+
+
+

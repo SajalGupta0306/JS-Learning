@@ -24,3 +24,7 @@
 2. define actions
 3. create reducer/s
 4. set up the store
+
+
+// working example:
+// https://codesandbox.io/s/quirky-shadow-q11ksg?file=/src/components/Users.js

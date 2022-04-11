@@ -5,16 +5,20 @@ const test = (function () {
   var contents = "Welcome to India";
 
   var callInner = function () {
+    console.log(contents);
     console.log("Welcome Bangalore");
   };
 
   return {
-    mainMethod: function () {
-      callInner();
-      console.log(contents);
-    },
+    // mainMethod: function () {
+    //   callInner();
+    //   console.log(contents);
+    // },
+    mainMethod: callInner,
   };
 })();
 
+module.exports = test;
+
 test.mainMethod();
-console.log(test.contents);
+// console.log(test.contents);

@@ -8,7 +8,7 @@
     <script>
       let ascending = true;
 
-      const myFunction = () => {
+      const search = () => {
         const inputVal = document.getElementById("myInput").value;
         const ulList = document.getElementById("myUL");
         const liList = ulList.getElementsByTagName("li");
@@ -63,7 +63,7 @@
         <input
           type="text"
           id="myInput"
-          onkeyup="myFunction()"
+          onkeyup="search()"
           placeholder="Search for names.."
         />
       </div>

@@ -18,13 +18,12 @@ const Tablet = function ({ ram, hdd, name, network }) {
 
 // Factory Function
 const createGadget = function (gadgetType, attributes) {
-  let returnValue;
   if (gadgetType === "Laptop") {
-    returnValue = new Laptop(attributes);
+    return new Laptop(attributes);
   } else if (gadgetType === "Tablet") {
-    returnValue = new Tablet(attributes);
+    return new Tablet(attributes);
   }
-  return returnValue;
+  return {};
 };
 
 const myLaptop = createGadget("Laptop", {

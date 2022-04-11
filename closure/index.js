@@ -7,8 +7,10 @@
 // Global variables
 // Eg 1;
 
+// https://dmitripavlutin.com/javascript-closures-interview-questions/
+
 function test() {
-  const a = 10;
+  var a = 10;
   function test1() {
     console.log(a);
   }
@@ -49,3 +51,8 @@ const Adder = () => {
     return result;
   };
 };
+
+const add = Adder();
+add(20, 30, 40); // 20
+add(25); // 45
+// ...

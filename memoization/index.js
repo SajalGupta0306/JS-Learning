@@ -55,3 +55,4 @@ function fib(n, previousFib = []) {
 }
 console.log(fib(1000));
 //1,1,2,3,5,8,13,21
+

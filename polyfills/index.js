@@ -1,5 +1,9 @@
 const MyPromise = require("./MyPromise");
 const MyPromiseMultipleThen = require("./MyPromiseMultipleThen");
+
+// https://jsfiddle.net/1wsfaj8x/7/
+
+
 // map
 
 const arr = [1, 2, 3, 4];
@@ -51,59 +55,46 @@ const reduceArr = arr.reduce((acc, val) => {
   return acc;
 }, 0);
 
-// console.log(reduceArr);
-
-// custom reduce
-// https://jsfiddle.net/sbmqh1rg/1/
-
-// function customReduce(callback, initialValue) {
-//   if (arr.length === 0) {
-//     return "No elements in the array";
-//   }
-//   let previous = initialValue;
-//   for (let i = previous ? 0 : 1; i < arr.length; i++) {
-//     previous = callback(previous ? previous : arr[0], arr[i], i, arr);
-//   }
-//   return previous;
-// }
-
-Array.prototype.ownReduce = function (callback, initialValue) {
-  let accumulator = initialValue;
-  for (let i = 0; i < this.length; i++) {
-    accumulator = accumulator
-      ? callback(accumulator, this[i], i, this)
-      : this[i];
+Array.prototype.customReduce = function(callback, initialValue) {
+  let accumulator;
+  let firstIndex;
+  if (arguments.length === 1) {
+    accumulator = this[0];
+    firstIndex = 1;
+  } else {
+    accumulator = initialValue;
+    firstIndex = 0;
+  }
+  for (let index = firstIndex; index < this.length; index++) {
+    accumulator = callback(accumulator, this[index], index, this);
   }
   return accumulator;
-};
+}
 
-const result = arr.ownReduce((acc, currVal) => {
+const result = arr.customReduce((acc, currVal) => {
   return acc + currVal;
 }, 50);
 
-// function sum(a, b) {
-//   return a + b;
-// }
-
-// console.log(customReduce(sum, 0));
+console.log(result);
 
 // bind
-let obj = {
-  name: "Jack",
+let name = {
+  firstName: "Jack",
+  lastName: "Sharma"
 };
 
-let myFunc = function (id, city) {
+const myFunc = function (id, city) {
   console.log(`${this.name}, ${id}, ${city}`);
 };
 
-Function.prototype.myBind = function (obj, ...args) {
+Function.prototype.myBind = function (val, ...args) {
   const func = this;
   return function (...newArgs) {
-    func.apply(obj, [...args, ...newArgs]);
+    func.apply(val, [...args, ...newArgs]);
   };
 };
 
-const newFunc = myFunc.myBind(obj, "a_random_id");
+const newFunc = myFunc.myBind(name);
 
 newFunc("New York");
 

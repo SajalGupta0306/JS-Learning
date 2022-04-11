@@ -8,7 +8,6 @@
 // https://dev.to/jerrycode06/callback-hell-and-how-to-rescue-it-ggj
 // https://dev.to/swarnaliroy94/methods-of-promise-all-any-finally-o2e
 
-
 const posts = [
   { title: "post 1", body: "this is post 1" },
   { title: "post 2", body: "this is post 2" },
@@ -34,6 +33,24 @@ function getPost() {
 
 // getPost();
 // createPost(getPost);
+
+// callback hell example
+const finishProcess = () => {
+  setTimeout(() => {
+    console.log("step 1");
+    setTimeout(() => {
+      console.log("step 2");
+      setTimeout(() => {
+        console.log("step 3");
+        setTimeout(() => {
+          console.log("Final Step");
+        }, 2000);
+      }, 2000);
+    }, 2000);
+  }, 2000);
+};
+
+finishProcess();
 
 // promise: Effective way to handle async data. Introduced in ES6.
 // using same getPost and posts, only createPost changes
@@ -84,23 +101,21 @@ Promise.all([promise1, promise2, promise3]).then((values) =>
 // Promise.allSettled ; returns the list of promises with their state, either resolved or rejected
 const p1 = new Promise((resolve, reject) => {
   setTimeout(() => {
-      console.log('The first promise has resolved');
-      resolve(10);
+    console.log("The first promise has resolved");
+    resolve(10);
   }, 1 * 1000);
-
 });
 
 const p2 = new Promise((resolve, reject) => {
   setTimeout(() => {
-      console.log('The second promise has rejected');
-      reject(20);
+    console.log("The second promise has rejected");
+    reject(20);
   }, 2 * 1000);
 });
 
-Promise.allSettled([p1, p2])
-  .then((result) => {
-      console.log(result);
-  });
+Promise.allSettled([p1, p2]).then((result) => {
+  console.log(result);
+});
 
 // Output:
 // The first promise has resolved
@@ -115,7 +130,6 @@ Promise.allSettled([p1, p2])
 //       "reason": 20
 //   }
 // ]
-
 
 // async/ await : cleaner way of dealing with promises
 // mostly used with fetch api

@@ -8,11 +8,11 @@ https://github.com/machadop1407/react-hooks-course
     value - holds the current value of the state
     setValue - update function which updates the state, as required
 
-2. useReducer - Alternative to useState. When the values are changed, it shows the updated values. Main Benefit os using useReducer:
+2. useReducer - Alternative to useState. When the values are changed, it shows the updated values. Main Benefit of using useReducer:
     a. when you have multiple/complex states to change, it is advised to use useReducer
     b. Syntax -  const [state, dispatch] = useReducer(reducer, initialValue);
         state - holds the current value. It could be an object which holds all state variables
-        dispatch - triggered whenevr there is a user triggered change,
+        dispatch - triggered whenevr there is a user triggered event,
         reducer - actual function which is meant to update the state based on the action passed during dispatch
         initialValue - initial value of the state
 
@@ -28,6 +28,8 @@ https://github.com/machadop1407/react-hooks-course
     d. Syntax - useEffect(() => {
         // make API call
     },[count]);  // this syntax will make API call when the component is rendered for the first time and afterwards only when the value of "count" is changed
+    e. https://codesandbox.io/s/amazing-shirley-9bhwgf?file=/src/App.js
+
 
 4. useRef - React Hook to access and manipulate DOM elements directly
     a. Syntax - const testRef = useRef(null);
@@ -35,9 +37,14 @@ https://github.com/machadop1407/react-hooks-course
     b. to access on any event - testRef.current.value/focus/...
     c. Best use-case - when we want to clear the input field after clicking on any event. Eg: to-do list
 
+4.a createRef vs useRef - https://www.geeksforgeeks.org/difference-between-useref-and-createref-in-reactjs/
+
 5. useLayoutEffect - Used when we want to do something before the rendering of appliation. It is called even before useEffect
     a Syntax - same as useEffect
     b. use-case - when any api calls can take time and useEffect takes time as it is called after the component is rendered.
+    c. It makes changes to a DOM node directly before the browser has a chance to paint.
+    d. Use the useLayoutEffect when ever you need to use useRef.
+    e. https://codesandbox.io/s/amazing-shirley-9bhwgf?file=/src/App.js
 
 6. useImperativeHandle - this hook is used when we want to update the state through the parent component which is defined in the child component
     a. syntax - It uses useRef, forwardRef , 
@@ -49,9 +56,9 @@ https://github.com/machadop1407/react-hooks-course
     })
     b. when we have a reusable component that needs to be invoked from outside
 
-8.   useMemo - When we have expensive calculations and doesnt waant to re-calculate on every render, we can make use of useMemo. It takes in a callback function which 
+8.   useMemo - When we have expensive calculations and doesnt want to re-calculate on every render, we can make use of useMemo. It takes in a callback function which 
                returns a value which is memoized. It also has a dependency array which indicates when this callback needs to be executed. If any dependency array
-               variable changes, we make computtation again, else ignore it. 
+               variable changes, we make computation again, else ignore it. 
     syntax - const getName = useMemo(() => expensiveCal(), []);
     https://codesandbox.io/s/purple-brook-v34ee8?file=/src/App.js:0-1234
     
@@ -59,6 +66,7 @@ https://github.com/machadop1407/react-hooks-course
     syntax - const expensiveCall = useCallback(() => {
             // perform the computation in this
         },[]);
-    https://codesandbox.io/s/compassionate-nightingale-ye750j?file=/src/App.js
+    https://codesandbox.io/s/usememo-usecallback-6ns8rw?file=/src/App.js
+
 
 

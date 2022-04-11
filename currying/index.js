@@ -27,9 +27,8 @@ const addWith5 = addWithClosure(5); // addWith5 returns function
 
 const arr = [1, 2, 3, 4, 5];
 for (var i = 0; i < arr.length; i++) {
-  function calling(i) {
+  function calling(j) {
     setTimeout(() => {
-      var j = i;
       console.log(j);
     }, 2000);
   }
@@ -49,9 +48,9 @@ console.log(result);
 // infinite(1,2..n)(5,6…n)…(n)()
 function infinite(...args) {
   const first = args.reduce((a, b) => a + b, 0);
-  return function inside(...args) {
-    const second = args.reduce((a, b) => a + b, 0);
-    if (second) {
+  return function inside(...insideArgs) {
+    const second = insideArgs.reduce((a, b) => a + b, 0);
+    if (insideArgs.length > 0) {
       return infinite(first + second);
     }
     return first;

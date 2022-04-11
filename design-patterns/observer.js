@@ -1,6 +1,14 @@
 // The observer pattern is a design pattern in which you define a one-to-many relationship from one object known as the subject to many objects known as the observers
 // An example is the model-view-controller architecture. When the view updates the model changes.
 
+// Example:
+
+// Consider a website that posts interesting articles.
+// Every day, you visit the site to check for new articles and if there is none, you revisit after some time/days.
+//  What if you get a subscription to the website instead? Once you have the subscription, you’ll get notified every time a new article is posted. 
+//  So now, instead of checking the site every few hours, you just wait for the notification about a new article.
+
+
 function Observable() {
   this.observersList = [];
 }

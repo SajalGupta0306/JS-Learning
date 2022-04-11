@@ -1,0 +1,51 @@
+// to convert scss to css, use a VS code extension "Live Saas Compiler".
+// You'll see a Watch icon in right corner, click on it. It'll do the remaining part for you.
+
+
+// benefits of CSS preprocessors
+// 1. use operators
+// 2. create variables
+// 3. nesting
+// 4. mixin
+// 5. partials - it is mandatory to create files starting with _. While importing, you can import with _ and without import
+// 6. parameters
+
+@import "mixin";
+// or : its the same thing
+// @import "_mixin";
+
+$font-color: white; // variables
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main_header {
+  width: 10vw + 90vw; // operators
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: grey;
+  // nesting
+  // further nesting within h1. Instead of writing h1 again, simply use &
+  h1 {
+    // mixins
+    @include commonProps(1rem); // parameters
+    &:hover {
+      color: black;
+    }
+  }
+
+  p {
+    font-size: 2rem;
+    // mixins
+    @include commonProps(0.5rem);
+    &:hover {
+      color: rgb(216, 238, 216);
+    }
+  }
+}

@@ -1,6 +1,10 @@
 // Singletons are classes which can be instantiated once, and can be accessed globally.
 // This single instance can be shared throughout our application, which makes Singletons great for managing global state in an application.
 
+// it becomes difficult to test as there is a single object consumed by other objects
+// race condition issues - 2 objects trying to modify the global state at the same point of time, inconsistent data
+//
+
 class User {
   constructor() {
     if (!User._instance) {
@@ -12,7 +16,6 @@ class User {
   add(item) {
     this._data.push(item);
   }
-
   get(id) {
     return this._data.find((d) => d.id === id);
   }
@@ -20,9 +23,11 @@ class User {
 
 var instanceOne = new User(); // Executes succesfully
 Object.freeze(instanceOne);
+
 instanceOne.add({ name: "Sajal", id: 1 });
 console.log(instanceOne);
-var instanceTwo = new User(); // Throws error
+
+var instanceTwo = new User(); // it doesn't creates a new instance
 instanceTwo.add({ name: "Gupta", id: 2 });
 console.log(instanceTwo);
 

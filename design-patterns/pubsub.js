@@ -21,7 +21,6 @@ const pubsub = {
     console.log(`PUBSUB: Making an broadcast about ${evName} with ${data}`);
     if (this.events[evName]) {
       this.events[evName].forEach((f) => {
-        // f.apply(null, data);
         f(data);
       });
     }

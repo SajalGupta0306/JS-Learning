@@ -20,7 +20,7 @@ function App() {
               <li>
                 <Link to="/feeds">Feeds</Link>
               </li>
-            </ul>
+            </ul> 
           </nav>
           <AppState>
             {/* Routes defines the set of routes  */}

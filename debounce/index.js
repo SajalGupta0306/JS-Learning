@@ -12,7 +12,6 @@
 // https://codesandbox.io/s/ecstatic-tess-45gdm8?file=/src/App.js
 // https://github.com/ankitsaxena21/react-debounce-tutorial
 
-
 const getData = () => {
   console.log("test");
 };

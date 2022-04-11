@@ -8,5 +8,5 @@
 // 2. stopPropagation avoids event delegation
 
 document.querySelector("#mainList").addEventListener("click", function (e) {
-  console.log(e);
+  console.log(e.target);
 });

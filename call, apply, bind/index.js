@@ -12,7 +12,7 @@ const printName = function (location) {
     console.log(this.firstName + " " + this.lastName + ". He lives in " + location);
 }
 
-// method borrowing is the main motive for call, apply and bind
+// context borrowing is the main motive for call, apply and bind
 
 // call: pass comma seperated params
 // first argument: reference of this for that particular obj

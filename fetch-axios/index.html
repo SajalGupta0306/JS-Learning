@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      (function () {
+        $.ajax({
+          url: "https://jsonplaceholder.typicode.com/todos/1",
+          type: "GET",
+          success: function (resp) {
+            // success callback
+            console.log(resp);
+          },
+          error: function (resp) {
+            // Error callback
+            console.log("ERROR. Something went wrong.");
+          },
+        });
+      })();
+    </script>
+  </head>
+  <body>Welcome</body>
+</html>

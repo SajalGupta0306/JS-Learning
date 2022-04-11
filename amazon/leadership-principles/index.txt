@@ -1,0 +1,55 @@
+1. customer obsession
+    - put yourself in customer shoes
+    - bring a nice and easy to use UI keeping latency and responsiveness in mind
+
+2. Ownership
+    - you dont act for yourself. You act on behalf of the company.
+    - try to resolve the dependencies
+
+3. Invent & Simplify
+    - start the solution simple rather than using fancy knowledge
+    - problem space might be complex, start from a simple process which caters customer needs
+
+4. Are right, a lot
+    - having data driven decisions 
+    - decision following can be done at any level
+
+5. Learn and be curious
+    - Keep on learning with your curiosity with a high spirit
+
+6. Hire and develop the Best
+    - Hire and develop the individual 
+    - Groom the people as and when required
+
+7. Insist on the highest standards
+    - Raising the bar on the code quality
+    - Follow clean code practises
+
+8. Think Big
+    - Look out for the long term vision
+    - systems should be scalable for diverse scenarios
+    - dont take short term decisions
+
+9. Bias for action
+    - Calculated risk taking
+    - Decisions can be changed at certain times
+
+10. Frugality
+    - Allocate resources which benfits the overall scope such as technology, people and products
+
+11. Earn Trust
+    - Hear out from everyone, rather than imposing your own desicions
+    - Value other's opinions and respect their voice
+
+12. Dive Deep
+    - Dont come to conclusions without a good understanding
+    - Look out for solution which helps for the longer time, rather than fixing a current scenarios
+
+13. Have Backbone; Disagree and Commit
+    - Always listen to others, before committing any decision
+    - If someone else has a better solution, understand and adapt, rather than sticking in only one direction
+
+14. Deliver Results
+    - Plan your deliverables
+    - Re-Look into priorities before finalizing
+    - Follow on-time delivery
