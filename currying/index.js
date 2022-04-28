@@ -14,6 +14,8 @@ const add = (a, b) => a + b;
 // const addWith2 = add.bind(this, 2, 6); // 2 is assigned to a, 6 is assigned to b
 // console.log(addWith2());
 
+// https://javascript.info/currying-partials
+
 //2. using closures
 function addWithClosure(x) {
   return function (y) {
@@ -72,3 +74,23 @@ function infinite1(a) {
 
 const test1 = infinite1(1)(2)(3)(4)(5);
 test1();
+
+/// currying any function
+function basicSum(a, b, c, d) {
+  return a + b + c + d;
+}
+
+const curry = (func) => {
+  return function insideCurry(...args) {
+    if (args.length >= func.length) {
+      return func(...args);
+    } else {
+      return function (...remainingArgs) {
+        return insideCurry(...args, ...remainingArgs);
+      };
+    }
+  };
+};
+
+const sum = curry(basicSum);
+console.log(sum(1)(4)(3, 2)); // 8

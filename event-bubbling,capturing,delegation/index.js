@@ -5,6 +5,7 @@
 // if the value is true (at any level - granparent, parent or child), it triggers callback at that time and ignores the callback during bubbling phase
 
 // Note: to stop propagation in any phase, capturing or bubbling, we can make use of e.stopPropagation() , see line 10
+// One way to prevent event bubbling is using event.stopPropagation() or event.cancelBubble
 // whatever line it is written, it stops further propagation
 
 document.getElementById("child").addEventListener("click", function (e) {
@@ -28,13 +29,10 @@ document.getElementById("child").addEventListener("click", function (e) {
 // );
 
 // above syntax can be written as below too:
-document.getElementById("parent").addEventListener(
-  "click",
-  function (e) {
-    console.log("parent clicked");
-    e.stopPropagation();
-  },
-);
+document.getElementById("parent").addEventListener("click", function (e) {
+  console.log("parent clicked");
+  e.stopPropagation();
+});
 
 document.getElementById("grandparent").addEventListener("click", function () {
   console.log("grandparent clicked");

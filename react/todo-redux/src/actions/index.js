@@ -7,6 +7,16 @@ export const onAddTodo = (value) => {
   };
 };
 
+// for thunk based async code
+// export const onAddTodo = (value) => {
+//   return (dispatch) => {
+//     dispatch({
+//       type: ADD_TODO,
+//       payload: value,
+//     });
+//   };
+// };
+
 export const onDeleteTodo = (value) => {
   return {
     type: DELETE_TODO,

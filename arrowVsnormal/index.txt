@@ -19,5 +19,8 @@ arrow   |  normal
         |
 https://betterprogramming.pub/difference-between-regular-functions-and-arrow-functions-f65639aba256
 
+https://www.section.io/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/
+
+
 arrow: 
 These functions are best suited for non-method functions, and they cannot be used as constructors.

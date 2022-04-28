@@ -1,4 +1,5 @@
-// memoize a function with multiple args
+// memoize a function with single/ multiple args
+// https://jsfiddle.net/0fqryga5/2/
 
 function memoize_single(fn) {
   const cache = {};
@@ -10,12 +11,12 @@ function memoize_single(fn) {
       cache[param] = result;
       return result;
     }
-  }
+  };
 }
 
 // memoize a function with multiple args
-const slice = Array.prototype.slice;
 function memoize(fn) {
+  const slice = Array.prototype.slice;
   const cache = {};
   return (...args) => {
     const params = slice.call(args);

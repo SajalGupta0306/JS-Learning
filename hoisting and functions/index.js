@@ -44,7 +44,7 @@ var c = function (value) {
 c(test);
 
 // first order functions
-// functions which dont take another function as argument or return fnctions 
+// functions which dont take another function as argument or return fnctions
 // eg: console.log
 
 // higher order functions
@@ -71,19 +71,27 @@ const calculate = (data, circleLogic) => {
 console.log(calculate(values, areaCircle));
 console.log(calculate(values, diameterCircle));
 
-
 // pure functions
-// functions with no side effects and always returns the same value for the given output
-  
-// Pure ; Easier to test, run the functions in parallel, cacheable
-function add(num) {
-  return num*2;
-}
+// functions with no side effects
+// (accessing/modifying the global variables inside function, no console statements(external API), no DOM Manipulations, no external Calls - Fetch/XHR)
+// and always returns the same value for the given output
+// they are predictable, readable, reusable and testable easily
 
 // Impure
+const x = 10;
 function add(num) {
-  return num* Math.random();
+  return num * x;
 }
+
+console.log(add(20));
+
+// Pure
+// Pure ; Easier to test, run the functions in parallel, cacheable
+function add(num, x) {
+  return num * x;
+}
+
+console.log(add(20, 10));
 // cannot use random values
 // cannot use Date or time
 // cannot change global states: such as DOM

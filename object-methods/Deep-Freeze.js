@@ -17,3 +17,5 @@ const obj2 = {
     },
   },
 };
+
+deepFreeze(obj2);

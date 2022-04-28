@@ -1,61 +1,50 @@
 const MyPromise = require("./MyPromise");
 const MyPromiseMultipleThen = require("./MyPromiseMultipleThen");
 
+// https://jsfiddle.net/rangoeq6/1/
+// Calling function once only
+
 // https://jsfiddle.net/1wsfaj8x/7/
 
+const arr = [1, 2, 3, 4, 5];
 
-// map
+// Map
+var jsMap = arr.map((val) => val * 2);
+/* console.log(jsMap); */
 
-const arr = [1, 2, 3, 4];
-
-const newArr = arr.map((val) => val * val);
-// console.log(newArr);
-
-// custom Map
-// Map works on data< hence arr and it takes callback as argument, hence callback
-// map returns a new array, hence newCustomArr
-function customMap(data, callback) {
-  let newCustomArr = [];
-  for (let i = 0; i < data.length; i++) {
-    newCustomArr.push(callback(data[i]));
+Array.prototype.myMap = function (cb) {
+  var result = [];
+  for (let i = 0; i < this.length; i++) {
+    result.push(cb(this[i]));
   }
-  return newCustomArr;
-}
+  return result;
+};
 
-function squareItself(x) {
-  return x * x;
-}
-// console.log(customMap(arr, squareItself));
+var customMap = arr.myMap((val) => val * 2);
+/* console.log(customMap); */
 
-// filter
-const filterArr = arr.filter((val) => val > 2);
-// console.log(filterArr);
+// Filter
+var jsFilter = arr.filter((val) => val >= 3);
+/* console.log(jsFilter); */
 
-// custom filter
-function customFilter(data, callback) {
-  let newFilterArr = [];
-  for (let i = 0; i < data.length; i++) {
-    if (callback(arr[i])) {
-      newFilterArr.push(arr[i]);
+Array.prototype.myFilter = function (cb) {
+  var result = [];
+  for (let i = 0; i < this.length; i++) {
+    if (cb(this[i])) {
+      result.push(this[i]);
     }
   }
-  return newFilterArr;
-}
+  return result;
+};
 
-function numberGreaterThan2(x) {
-  if (x > 2) {
-    return x;
-  }
-}
-// console.log(customFilter(arr, numberGreaterThan2));
+var customFilter = arr.myFilter((val) => val >= 3);
+/* console.log(customFilter); */
 
 // reduce
-const reduceArr = arr.reduce((acc, val) => {
-  acc += val;
-  return acc;
-}, 0);
+var jsReduce = arr.reduce((acc, val) => acc + val, 0);
+/* console.log(jsReduce); */
 
-Array.prototype.customReduce = function(callback, initialValue) {
+Array.prototype.myReduce = function (callback, initialValue) {
   let accumulator;
   let firstIndex;
   if (arguments.length === 1) {
@@ -69,34 +58,45 @@ Array.prototype.customReduce = function(callback, initialValue) {
     accumulator = callback(accumulator, this[index], index, this);
   }
   return accumulator;
-}
-
-const result = arr.customReduce((acc, currVal) => {
-  return acc + currVal;
-}, 50);
-
-console.log(result);
-
-// bind
-let name = {
-  firstName: "Jack",
-  lastName: "Sharma"
 };
 
-const myFunc = function (id, city) {
-  console.log(`${this.name}, ${id}, ${city}`);
+var customReduce = arr.myReduce((acc, val) => acc + val);
+/* console.log(customReduce); */
+
+// bind
+const name = {
+  firstName: "Sajal",
+  lastName: "Gupta",
+};
+
+const printName = function (city, country) {
+  console.log(
+    this.firstName + " " + this.lastName + " " + city + " " + country
+  );
+};
+
+const jsBind = printName.bind(name, "Ynr");
+jsBind("India");
+
+Function.prototype.myCall = function (obj, ...args) {
+  obj.callFn = this;
+  obj.callFn(...args);
+};
+
+Function.prototype.myApply = function (obj, args) {
+  obj.callFn = this;
+  obj.callFn(...args);
 };
 
 Function.prototype.myBind = function (val, ...args) {
-  const func = this;
-  return function (...newArgs) {
-    func.apply(val, [...args, ...newArgs]);
+  const context = this;
+  return function (...insideArgs) {
+    context.apply(val, [...args, ...insideArgs]);
   };
 };
 
-const newFunc = myFunc.myBind(name);
-
-newFunc("New York");
+const customBind = printName.myBind(name);
+customBind("Ynr", "India");
 
 // prmoises
 // 1. with sync data in resolve
@@ -105,7 +105,6 @@ newFunc("New York");
 // 4. with finally scenario
 
 //1.
-
 // const MyPromise = function (executor) {
 //   let isResolved = false;
 //   let resolvedData;

@@ -1,6 +1,6 @@
-const p = new Promise(resovle => setTimeout(resovle));
+let p = new Promise((resovle) => setTimeout(resovle));
 
-new Promise(resolve => resolve(p)).then(() => {
+new Promise((resolve) => resolve(p)).then(() => {
   console.log("tick 3");
 });
 
@@ -12,7 +12,7 @@ p.then(() => {
 
 //////////////////////////////////////////////
 
-const a = new Promise(resolve => setTimeout(resolve));
+const a = new Promise((resolve) => setTimeout(resolve));
 
 Promise.resolve(a).then(() => {
   console.log("tick 3");
@@ -23,3 +23,22 @@ p.then(() => {
 }).then(() => {
   console.log("tick 2");
 });
+
+//////////////////////////////////////////////
+
+console.log("stack [1]");
+setTimeout(() => console.log("macro [2]"), 0);
+setTimeout(() => console.log("macro [3]"), 1);
+
+const p = Promise.resolve();
+for (let i = 0; i < 3; i++)
+  p.then(() => {
+    setTimeout(() => {
+      console.log("stack [4]");
+      setTimeout(() => console.log("macro [5]"), 0);
+      p.then(() => console.log("micro [6]"));
+    }, 0);
+    console.log("stack [7]");
+  });
+
+console.log("macro [8]");

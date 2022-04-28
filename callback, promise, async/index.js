@@ -135,7 +135,7 @@ Promise.allSettled([p1, p2]).then((result) => {
 // mostly used with fetch api
 const testAsyncAwait = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
-  const data = await response.json;
+  const data = await response.json();
   console.log(data);
 };
 testAsyncAwait();

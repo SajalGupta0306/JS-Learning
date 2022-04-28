@@ -19,19 +19,16 @@ console.log(arr);
 arr.splice(5, 2);
 console.log(arr);
 
-
-// split
+// slice
 // works both on arrays and strings
 // doesnt changes the original array. THe computation can be stored in a new array
 var test = "dummy";
-var testArr = [1,2,3,4,5];
+var testArr = [1, 2, 3, 4, 5];
 // returns a portion of string
- // firt param: starting index from where to start slicing
- // second param: imdex till where to slice. it is exclusive
-var data = test.slice(0,3); // returns dum
+// firt param: starting index from where to start slicing
+// second param: imdex till where to slice. it is exclusive
+var data = test.slice(0, 3); // returns dum
 console.log(data);
 
 var dummy = testArr.slice(-1);
 console.log(dummy);
-
-
