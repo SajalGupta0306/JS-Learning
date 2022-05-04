@@ -12,6 +12,8 @@
 // https://codesandbox.io/s/ecstatic-tess-45gdm8?file=/src/App.js
 // https://github.com/ankitsaxena21/react-debounce-tutorial
 
+// https://towardsdev.com/debouncing-and-throttling-in-javascript-8862efe2b563
+
 const getData = () => {
   console.log("test");
 };

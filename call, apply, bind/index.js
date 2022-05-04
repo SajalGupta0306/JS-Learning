@@ -1,16 +1,18 @@
 const user1 = {
-    firstName: "Sajal",
-    lastName: "Gupta"
-}
+  firstName: "Sajal",
+  lastName: "Gupta",
+};
 
 const user2 = {
-    firstName: "Saksham",
-    lastName: "Gupta"
-}
+  firstName: "Saksham",
+  lastName: "Gupta",
+};
 
 const printName = function (location) {
-    console.log(this.firstName + " " + this.lastName + ". He lives in " + location);
-}
+  console.log(
+    this.firstName + " " + this.lastName + ". He lives in " + location
+  );
+};
 
 // context borrowing is the main motive for call, apply and bind
 

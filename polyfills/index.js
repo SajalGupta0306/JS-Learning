@@ -4,7 +4,7 @@ const MyPromiseMultipleThen = require("./MyPromiseMultipleThen");
 // https://jsfiddle.net/rangoeq6/1/
 // Calling function once only
 
-// https://jsfiddle.net/1wsfaj8x/7/
+// https://jsfiddle.net/br9dxmh8/4/
 
 const arr = [1, 2, 3, 4, 5];
 

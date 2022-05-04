@@ -67,6 +67,3 @@ https://github.com/machadop1407/react-hooks-course
             // perform the computation in this
         },[]);
     https://codesandbox.io/s/usememo-usecallback-6ns8rw?file=/src/App.js
-
-
-

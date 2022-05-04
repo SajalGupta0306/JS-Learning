@@ -10,39 +10,6 @@
 // Eg: 1
 // square of a number
 
-// https://jsfiddle.net/g1nha4wc/6/
+// https://jsfiddle.net/w4uqy37L/5/
 // Fibonacci Sequence
-const memoFib = (n, cached = {}) => {
-  let result;
-  if (n in cached) {
-    return cached[n];
-  }
-  if (n <= 2) {
-    result = 1;
-  } else {
-    result = memoFib(n - 1, cached) + memoFib(n - 2, cached);
-  }
-  cached[n] = result;
-  return result;
-};
-const n = 106;
-console.log(`Fibonnaci of ${n} is ${memoFib(n)}`);
-
-//  Factorial of a number
-const memoFac = (n, cached = {}) => {
-  let result;
-  if (n in cached) {
-    return cached[n];
-  }
-  if (n === 0) {
-    result = 0;
-  } else if (n === 1) {
-    return 1;
-  } else {
-    result = n * memoFac(n - 1, cached);
-  }
-  cached[n] = result;
-  return result;
-};
-const t = 150;
-console.log(`Factorial of ${t} is ${memoFac(t)}`);
+// Factorial

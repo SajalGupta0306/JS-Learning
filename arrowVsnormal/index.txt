@@ -21,6 +21,9 @@ https://betterprogramming.pub/difference-between-regular-functions-and-arrow-fun
 
 https://www.section.io/engineering-education/how-to-use-javascript-arrow-functions-and-this-keyword/
 
+https://blog.bitsrc.io/arrow-functions-vs-regular-functions-in-javascript-458ccd863bc1
+
+
 
 arrow: 
 These functions are best suited for non-method functions, and they cannot be used as constructors.

@@ -48,7 +48,7 @@ c(test);
 // eg: console.log
 
 // higher order functions
-// function which takes func as an argument and returns functions as an argument
+// function which takes func as an argument or returns functions as an argument
 // functions passed to higher order functions are called callbacks
 // Eg:
 const values = [1, 2, 3, 4];

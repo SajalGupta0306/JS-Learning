@@ -1,0 +1,7 @@
+let and const
+arrow functions
+template literals
+promises
+default parameters in functions
+Classes
+module exports
