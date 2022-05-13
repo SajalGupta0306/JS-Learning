@@ -14,7 +14,7 @@ document.getElementById("child").addEventListener("click", function (e) {
 });
 
 // if capture is true:
-// putput would be:
+// output would be:
 
 // parent clicked
 // child clicked

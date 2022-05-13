@@ -93,4 +93,4 @@ const curry = (func) => {
 };
 
 const sum = curry(basicSum);
-console.log(sum(1)(4)(3, 2)); // 8
+console.log(sum(1)(4)(3, 2)); // 10

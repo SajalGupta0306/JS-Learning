@@ -1,12 +1,11 @@
-function deepFreeze(object) {
-  for (const key in object) {
-    const value = object[key];
-    if (value && typeof value === "object") {
-      deepFreeze(value);
+const deepFreeze = (obj) => {
+  for (var key in obj) {
+    if (obj[key] && typeof obj[key] === "object") {
+      deepFreeze(obj[key]);
     }
   }
-  return Object.freeze(object);
-}
+  return Object.freeze(obj);
+};
 
 const obj2 = {
   value1: "Test",

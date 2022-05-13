@@ -15,15 +15,24 @@ const Tablet = function ({ ram, hdd, name, network }) {
   this.network = network || 0;
   this.name = name || "";
 };
+const gadgets = {
+  Laptop,
+  Tablet,
+};
 
 // Factory Function
 const createGadget = function (gadgetType, attributes) {
-  if (gadgetType === "Laptop") {
-    return new Laptop(attributes);
-  } else if (gadgetType === "Tablet") {
-    return new Tablet(attributes);
+  const type = gadgets[gadgetType];
+  if (type) {
+    return new type(attributes);
   }
   return {};
+  // if (gadgetType === "Laptop") {
+  //   return new Laptop(attributes);
+  // } else if (gadgetType === "Tablet") {
+  //   return new Tablet(attributes);
+  // }
+  //
 };
 
 const myLaptop = createGadget("Laptop", {
@@ -38,5 +47,23 @@ const myTablet = createGadget("Tablet", {
   name: "Bab's iPad",
   network: "4G",
 });
+
 console.log(myLaptop);
 console.log(myTablet);
+
+////////////////////////////
+// Eg: 2
+
+function personFactory(name) {
+  return {
+    introduce() {
+      return `Hello, I am ${name}`;
+    },
+  };
+}
+
+const e1 = personFactory("Sajal");
+e1.introduce();
+
+const e2 = personFactory("Sam");
+e2.introduce();

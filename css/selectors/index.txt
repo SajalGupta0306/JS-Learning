@@ -1,0 +1,15 @@
+css selectors
+
+
+https://www.smashingmagazine.com/2016/05/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements/
+
+pseudo classes
+a pseudo-class is basically a phantom state or specific characteristic of an element that can be targeted with CSS. 
+A few common pseudo-classes are :link, :visited, :hover, :active, :first-child and :nth-child
+
+
+pseudo elements
+pseudo-elements are like virtual elements that we can treat as regular HTML elements. 
+The thing is that they don’t exist in the document tree or DOM. 
+This means we don’t actually type the pseudo-elements, but rather create them with CSS.
+A few common pseudo-elements are ::after, ::before and ::first-letter

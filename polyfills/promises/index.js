@@ -1,7 +1,7 @@
 const p1 = new Promise((resolve, reject) => {
   setTimeout(() => {
-    reject("i am rejected after 200");
-  }, 200);
+    reject(new Error("error block"));
+  }, 800);
 });
 
 const p2 = new Promise((resolve, reject) => {
@@ -10,9 +10,10 @@ const p2 = new Promise((resolve, reject) => {
   }, 500);
 });
 
-var p3 = 20;
+const p3 = 20;
 
 // Promise.race polyfill
+// https://jsfiddle.net/y1gkwm76/3/
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Promise.race([p1, p2]).then(
@@ -35,21 +36,20 @@ Promise.myRace = function (promises) {
         })
         .catch((err) => {
           reject(err);
-        }); // using Promise.resolve as there could be a normal value passed in promise array
+        });
     });
   });
 };
 
-Promise.myRace([p1, p2, p3]).then(
-  (val) => {
+Promise.myRace([p1, p2, p3])
+  .then((val) => {
     console.log("resolved");
     console.log(val);
-  },
-  (err) => {
+  })
+  .catch((err) => {
     console.log("rejected");
-    console.log(err);
-  }
-);
+    console.log(err.message);
+  });
 
 // Promise.any polyfill
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -61,8 +61,9 @@ Promise.myRace([p1, p2, p3]).then(
 
 // Promise.allSettled polyfill
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// https://jsfiddle.net/qtv9ucxL/7/
+// https://jsfiddle.net/30eL4jxo/
 
 // Simple Promise Implementation
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// https://jsfiddle.net/fpd1yg90/7/
 // https://jsfiddle.net/5xutbk2g/6/

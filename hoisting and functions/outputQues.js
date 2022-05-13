@@ -1,8 +1,8 @@
 var a = 1;
 function b() {
-    a = 10;
-    return;
-    function a() {}
+  a = 10;
+  return;
+  function a() {}
 }
 b();
 console.log(a);
@@ -12,14 +12,14 @@ console.log(a);
 //////////////////////////
 
 function foo() {
-    function bar() {
-        return 3;
-    }
-    return bar();
+  function bar() {
+    return 3;
+  }
+  return bar();
 
-    function bar() {
-        return 8;
-    }
+  function bar() {
+    return 8;
+  }
 }
 alert(foo());
 
@@ -28,11 +28,11 @@ alert(foo());
 //////////////////////////
 
 function parent() {
-    var hoisted = "I'm a variable";
-    function hoisted() {
-        return "I'm a function";
-    }
-    return hoisted();
+  var hoisted = "I'm a variable";
+  function hoisted() {
+    return "I'm a function";
+  }
+  return hoisted();
 }
 console.log(parent());
 
@@ -42,24 +42,24 @@ console.log(parent());
 
 alert(foo());
 function foo() {
-    var bar = function() {
-        return 3;
-    };
-    return bar();
-    var bar = function() {
-        return 8;
-    };
+  var bar = function () {
+    return 3;
+  };
+  return bar();
+  var bar = function () {
+    return 8;
+  };
 }
 
 // Output: 3
 
 //////////////////////////
 
-var myVar = 'foo';
-(function() {
-    console.log('Original value was: ' + myVar);
-    var myVar = 'bar';
-    console.log('New value is: ' + myVar);
+var myVar = "foo";
+(function () {
+  console.log("Original value was: " + myVar);
+  var myVar = "bar";
+  console.log("New value is: " + myVar);
 })();
 
 // Output: Original value was: undefined New value is: bar
