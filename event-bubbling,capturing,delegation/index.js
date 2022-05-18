@@ -10,7 +10,6 @@
 
 document.getElementById("child").addEventListener("click", function (e) {
   console.log("child clicked");
-  // e.stopPropagation();
 });
 
 // if capture is true:
@@ -31,9 +30,11 @@ document.getElementById("child").addEventListener("click", function (e) {
 // above syntax can be written as below too:
 document.getElementById("parent").addEventListener("click", function (e) {
   console.log("parent clicked");
-  e.stopPropagation();
+  // e.stopPropagation();
+  // e.stopImmediatePropagation();
 });
 
-document.getElementById("grandparent").addEventListener("click", function () {
+document.getElementById("grandparent").addEventListener("click", function (e) {
   console.log("grandparent clicked");
+  e.stopImmediatePropagation();
 });

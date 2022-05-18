@@ -83,7 +83,7 @@ Function.prototype.myCall = function (obj, ...args) {
   obj.callFn(...args);
 };
 
-Function.prototype.myApply = function (obj, args) {
+Function.prototype.myApply = function (obj, args = []) {
   obj.callFn = this;
   obj.callFn(...args);
 };

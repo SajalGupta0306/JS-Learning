@@ -14,21 +14,24 @@ With async (asynchronous), browser will continue to load the HTML page and rende
 With defer, browser will run your script when the page finished parsing. (not necessary finishing downloading all image files. This is good.) -->
 
     <!-- defer loads all the scrips in sequential manner only, it'll be loaded after line 11 and line 17 is executed -->
-    <script src="index.js"></script>
+    <!-- <script src="index.js"></script>
     <script defer src="script1.js"></script>
     <script defer src="script2.js"></script>
     <script defer src="script3.js"></script>
+    <script src="index.js"></script>
     <script defer src="script4.js"></script>
     <script defer src="script5.js"></script>
-    <script src="index.js"></script>
+    <script src="index.js"></script> -->
 
     <!-- async loads all the scrips in any sequence in asynchronous manner-->
-    <!-- <script src="index.js"></script>
+
+    <script src="index.js"></script>
     <script async src="script1.js"></script>
     <script async src="script2.js"></script>
+    <script src="index.js"></script>
     <script async src="script3.js"></script>
     <script async src="script4.js"></script>
     <script async src="script5.js"></script>
-    <script src="index.js"></script> -->
+    <script src="index.js"></script>
   </body>
 </html>

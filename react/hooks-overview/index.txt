@@ -67,3 +67,7 @@ https://github.com/machadop1407/react-hooks-course
             // perform the computation in this
         },[]);
     https://codesandbox.io/s/usememo-usecallback-6ns8rw?file=/src/App.js
+
+UseCallback is used to optimize the rendering behavior of your React function components.
+useMemo is used to memoize expensive functions to avoid having to call them on every render
+

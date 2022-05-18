@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <style>
+      .liStyle {
+        border-bottom: 1px solid;
+        width: 15rem;
+      }
+
+      #test {
+        border: 1px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <table id="test">
+        <tbody id="tbodyId"></tbody>
+      </table>
+
+      <button>Welcome</button>
+    </div>
+    <script>
+      const table = document.getElementById("tbodyId");
+      const div = document.getElementById("main");
+      const btn = document.createElement("button");
+      btn.setAttribute("id", "show");
+      btn.innerText = "Show More";
+      div.appendChild(btn);
+      let initCount = 10;
+
+      const getUserData = async () => {
+        const respone = await fetch("https://gorest.co.in/public/v2/users");
+        const data = await respone.json();
+        return data;
+      };
+
+      async function display(count) {
+        let result = "";
+        const userInfo = await getUserData();
+        for (let i = 0; i < count; i++) {
+          result +=
+            "<tr><td class='liStyle'>" + userInfo[i].name + "</td></tr>";
+        }
+        table.innerHTML = result;
+      }
+
+      display(initCount);
+
+      btn.addEventListener("click", function () {
+        if (btn.innerText === "Show Less") {
+          initCount = 10;
+        } else if (btn.innerText === "Show More") {
+          initCount += 10;
+        }
+        display(initCount);
+        if (initCount > 10) {
+          btn.innerText = "Show Less";
+        } else {
+          btn.innerText = "Show More";
+        }
+      });
+    </script>
+  </body>
+</html>
