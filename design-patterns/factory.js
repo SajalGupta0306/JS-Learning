@@ -27,12 +27,6 @@ const createGadget = function (gadgetType, attributes) {
     return new type(attributes);
   }
   return {};
-  // if (gadgetType === "Laptop") {
-  //   return new Laptop(attributes);
-  // } else if (gadgetType === "Tablet") {
-  //   return new Tablet(attributes);
-  // }
-  //
 };
 
 const myLaptop = createGadget("Laptop", {

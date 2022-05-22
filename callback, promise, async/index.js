@@ -7,6 +7,7 @@
 
 // https://dev.to/jerrycode06/callback-hell-and-how-to-rescue-it-ggj
 // https://dev.to/swarnaliroy94/methods-of-promise-all-any-finally-o2e
+// https://www.zealousweb.com/how-to-handle-asynchronous-javascript-the-2021-way/
 
 const posts = [
   { title: "post 1", body: "this is post 1" },

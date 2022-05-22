@@ -22,15 +22,37 @@ class User {
 }
 
 var instanceOne = new User(); // Executes succesfully
-Object.freeze(instanceOne);
-
 instanceOne.add({ name: "Sajal", id: 1 });
-console.log(instanceOne);
 
 var instanceTwo = new User(); // it doesn't creates a new instance
 instanceTwo.add({ name: "Gupta", id: 2 });
+
+console.log(instanceOne);
 console.log(instanceTwo);
 
+/////////////////////////////////////////////////////////////////////
+
+function User() {
+  this.data = [];
+  if (typeof User._instance === "object") {
+    return User._instance;
+  }
+  this.add = function (val) {
+    this.data.push(val);
+  };
+  User._instance = this;
+}
+
+const u1 = new User();
+u1.add("welcome1");
+
+const u2 = new User();
+u2.add("welcome2");
+
+console.log(u1.data);
+console.log(u2.data);
+
+/////////////////////////////////////////////////////////////////////
 const DatabaseConnection = (() => {
   let isDatabaseInstanceAvailable = false;
   function createIntance() {
