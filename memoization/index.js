@@ -10,6 +10,6 @@
 // Eg: 1
 // square of a number
 
-// https://jsfiddle.net/jewtnLxg/1/
+// https://jsfiddle.net/tLp5jys9/
 // Fibonacci Sequence
 // Factorial

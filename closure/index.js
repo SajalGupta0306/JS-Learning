@@ -9,6 +9,13 @@
 
 // https://dmitripavlutin.com/javascript-closures-interview-questions/
 
+// Disadv
+// 1: Till the time its active, the memory can’t be garbage collected.
+// 2: It slows down the performance, because function within other function creates duplicate in memory.
+
+// Adv
+// 1. Protect the variable security within the function, and strengthen encapsulation
+
 function test() {
   var a = 10;
   function test1() {

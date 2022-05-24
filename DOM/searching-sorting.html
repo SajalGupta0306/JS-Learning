@@ -34,8 +34,16 @@
         if (ascending) {
           sortedList.sort();
         } else {
-          sortedList.sort();
-          sortedList.reverse();
+          sortedList.sort(function (a, b) {
+            if (a > b) {
+              return -1;
+            }
+            if (b > a) {
+              return 1;
+            }
+            return 0;
+          });
+          // sortedList.reverse();
         }
         for (let i = 0; i < sortedList.length; i++) {
           liList[i].innerHTML = sortedList[i];
