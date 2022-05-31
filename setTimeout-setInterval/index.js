@@ -7,6 +7,7 @@ function interval(cb, ms) {
       clearTimeout(a.timer);
     },
   };
+
   (function run() {
     cb();
     a.timer = setTimeout(run, ms);
