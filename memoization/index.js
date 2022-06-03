@@ -13,3 +13,16 @@
 // https://jsfiddle.net/tLp5jys9/
 // Fibonacci Sequence
 // Factorial
+
+// program to display fibonacci sequence using recursion
+function fibonacci(num) {
+  if (num < 2) {
+    return num;
+  } else {
+    return fibonacci(num - 1) + fibonacci(num - 2);
+  }
+}
+
+for (let i = 0; i < 25; i++) {
+  console.log(fibonacci(i));
+}
