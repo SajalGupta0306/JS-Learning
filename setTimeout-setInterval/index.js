@@ -36,3 +36,65 @@ let timer = setInterval(() => {
     clearInterval(timer);
   }
 }, 2000);
+
+// clearAllInterval
+
+const MY_INTERVALS = {
+  intervalIds: [],
+  setInterval: function (fn, delay) {
+    const id = setInterval(fn, delay);
+    this.intervalIds.push(id);
+  },
+  clearAllInterval: function () {
+    while (this.intervalIds.length) {
+      clearInterval(this.intervalIds.pop());
+    }
+  },
+};
+
+MY_INTERVALS.setInterval(() => {
+  console.log("Hello");
+}, 2000);
+
+MY_INTERVALS.setInterval(() => {
+  console.log("Hello2");
+}, 500);
+
+MY_INTERVALS.clearAllInterval();
+
+MY_INTERVALS.setInterval(() => {
+  console.log("Hello3");
+}, 1000);
+
+MY_INTERVALS.clearAllInterval();
+
+// clearAllTimeout
+
+const MY_TIMERS = {
+  timeoutIds: [],
+  setTimeout: function (fn, delay) {
+    const id = setTimeout(fn, delay);
+    this.timeoutIds.push(id);
+  },
+  clearAllTimeout: function () {
+    while (this.timeoutIds.length) {
+      clearTimeout(this.timeoutIds.pop());
+    }
+  },
+};
+
+MY_TIMERS.setTimeout(() => {
+  console.log("Hello");
+}, 2000);
+
+MY_TIMERS.setTimeout(() => {
+  console.log("Hello2");
+}, 500);
+
+MY_TIMERS.clearAllTimeout();
+
+MY_TIMERS.setTimeout(() => {
+  console.log("Hello3");
+}, 1000);
+
+MY_TIMERS.clearAllTimeout();

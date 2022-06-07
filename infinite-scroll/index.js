@@ -1,6 +1,6 @@
 const container = document.querySelector(".container");
 
-function loadImages(numImages = 10) {
+function loadImages(numImages = 12) {
   let i = 0;
   while (i < numImages) {
     fetch("https://dog.ceo/api/breeds/image/random")
@@ -23,6 +23,9 @@ window.addEventListener("scroll", () => {
   if (
     window.scrollY + window.innerHeight >=
     document.documentElement.scrollHeight
+
+    // window.scrollY + window.innerHeight >=
+    // document.body.offsetHeight
   ) {
     loadImages();
   }
