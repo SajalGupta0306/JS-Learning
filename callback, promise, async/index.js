@@ -144,3 +144,32 @@ testAsyncAwait();
 // reason why promise is better than callback
 // 1. to avoid callbackHell
 // 2. avoid security issues - consuming third party libraries
+
+//////////////////////////////////
+// async tasks run in sync mode
+const asyncTask = (val) => {
+  return new Promise((res, _) => {
+    setTimeout(() => {
+      res("Resolving " + val);
+    }, 100 * val);
+  });
+};
+
+const promises = [
+  asyncTask(3),
+  asyncTask(1),
+  asyncTask(7),
+  asyncTask(2),
+  asyncTask(5),
+];
+
+const executeAsyncTasks = async (promises) => {
+  for (const promise of promises) {
+    try {
+      const result = await promise;
+      console.log(result);
+    } catch (error) {
+      console.log("Error: " + error);
+    }
+  }
+};

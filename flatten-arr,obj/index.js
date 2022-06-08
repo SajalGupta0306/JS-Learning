@@ -3,6 +3,51 @@
 // Deep Clone of an obj
 // https://jsfiddle.net/dkvrL094/3/
 
+// merge two objects without inbuilt functions
+const obj1 = {
+  name: "prashant",
+  age: 23,
+};
+
+const obj2 = {
+  qualification: "BSC CS",
+  loves: "Javascript",
+};
+
+const mergeObj = (...args) => {
+  const result = {};
+  for (let i = 0; i < args.length; i++) {
+    merge(args[i]);
+  }
+
+  function merge(obj) {
+    for (let key in obj) {
+      const value = obj[key];
+      result[key] = value;
+    }
+  }
+  return result;
+};
+
+// flattened with depth
+function* flattenWithDepth(array, depth) {
+  if (depth === null || typeof depth === "undefined") {
+    depth = Infinity;
+  }
+
+  for (const item of array) {
+    if (Array.isArray(item) && depth > 0) {
+      yield* flattenWithDepth(item, depth - 1);
+    } else {
+      yield item;
+    }
+  }
+}
+
+const arr = [1, 2, 3, [4, 5, [6, 7], 8], [10, 11, [12, [13]]], 9];
+const flattenedArr = [...flattenWithDepth(arr, 1)];
+
+// Deep Clone of an obj
 const obj = {
   name: {
     firstName: "ABC",
@@ -63,3 +108,53 @@ data.forEach((record) => {
   }
 });
 console.log(result);
+
+////////////////////////////
+// toggle
+
+const toggle = (...list) => {
+  let current = -1;
+  const lastIndex = list.length - 1;
+  return function () {
+    if (current >= lastIndex) {
+      current = 0;
+    } else {
+      current += 1;
+    }
+    return list[current];
+  };
+};
+const hello = toggle("1", "2", "3");
+console.log(hello()); // "1"
+console.log(hello()); // "2"
+console.log(hello()); // "3"
+console.log(hello()); // "1"
+console.log(hello()); // "2"
+console.log(hello()); // "3"
+
+//////////////////////////////
+function message() {
+  console.log("hello");
+}
+
+function sampler(fn, count, thisContext) {
+  let counter = 0;
+  return function (...args) {
+    const context = this;
+    if (++counter !== count) {
+      return;
+    }
+    fn.apply(context || thisContext, args);
+    counter = 0;
+  };
+}
+
+const sample = sampler(message, 4);
+sample();
+sample();
+sample();
+sample(); // this will be executed
+sample();
+sample();
+sample();
+sample(); // this will be executed
