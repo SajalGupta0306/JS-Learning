@@ -79,19 +79,19 @@ console.log(calculate(values, diameterCircle));
 
 // Impure
 const x = 10;
-function add(num) {
+function add1(num) {
   return num * x;
 }
 
-console.log(add(20));
+console.log(add1(20));
 
 // Pure
 // Pure ; Easier to test, run the functions in parallel, cacheable
-function add(num, x) {
-  return num * x;
+function add2(num, y) {
+  return num * y;
 }
 
-console.log(add(20, 10));
+console.log(add2(20, 10));
 // cannot use random values
 // cannot use Date or time
 // cannot change global states: such as DOM

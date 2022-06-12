@@ -11,18 +11,69 @@
 // square of a number
 
 // https://jsfiddle.net/tLp5jys9/
+
+// memoize a function with single/ multiple args
+// https://jsfiddle.net/0fqryga5/2/
+
 // Fibonacci Sequence
-// Factorial
-
-// program to display fibonacci sequence using recursion
-function fibonacci(num) {
-  if (num < 2) {
-    return num;
-  } else {
-    return fibonacci(num - 1) + fibonacci(num - 2);
+const memoFib = (n, cached = {}) => {
+  let result;
+  if (n in cached) {
+    return cached[n];
   }
+  if (n <= 2) {
+    result = 1;
+  } else {
+    result = memoFib(n - 1, cached) + memoFib(n - 2, cached);
+  }
+  cached[n] = result;
+  return result;
+};
+const n = 45;
+console.log(`fibonacci number of ${n} is ${memoFib(n)}`);
+
+//  Factorial of a number
+const memoFact = (n, cached = {}) => {
+  let result;
+  if (n in cached) {
+    return cached[n];
+  }
+  if (n === 0) {
+    result = 0;
+  } else if (n === 1) {
+    result = 1;
+  } else {
+    result = n * memoFact(n - 1, cached);
+  }
+  cached[n] = result;
+  return result;
+};
+const t = 36;
+console.log(`Factorial of ${t} is ${memoFact(t)}`);
+
+// Memoize a Function
+function memoize(func) {
+  let cache = {};
+  return function (...args) {
+    const argsIndex = JSON.stringify(args);
+    if (!cache[argsIndex]) {
+      cache[argsIndex] = func(...args);
+    }
+    return cache[argsIndex];
+  };
 }
 
-for (let i = 0; i < 25; i++) {
-  console.log(fibonacci(i));
-}
+const clumsysquare = memoize((num1, num2) => {
+  for (let i = 1; i <= 100000000; i++);
+  return num1 * num2;
+});
+
+const result = memoize(clumsysquare);
+
+console.time("First call");
+console.log(result(1234, 5678));
+console.timeEnd("First call");
+
+console.time("Second call");
+console.log(result(1234, 5678));
+console.timeEnd("Second call");
