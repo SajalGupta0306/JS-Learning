@@ -1,7 +1,9 @@
 const deepFreeze = (obj) => {
   for (var key in obj) {
     if (obj[key] && typeof obj[key] === "object") {
-      deepFreeze(obj[key]);
+      if (!Array.isArray(obj[key])) {
+        deepFreeze(obj[key]);
+      }
     }
   }
   return Object.freeze(obj);

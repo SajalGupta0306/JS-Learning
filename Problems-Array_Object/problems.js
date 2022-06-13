@@ -167,3 +167,86 @@ const move = (arr, oldPos, newPos) => {
   return arr;
 };
 console.log(move([10, 20, 30, 40, 50], 0, 2));
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// print first N Chars of an array
+
+function firstNChars(arr, n) {
+  let result = [];
+  if (n === null || typeof n === "undefined" || n === 0) {
+    return arr[0];
+  }
+  if (arr.length <= n) {
+    return arr;
+  }
+  for (let i = 0; i < n; i++) {
+    result.push(arr[i]);
+  }
+  return result;
+}
+
+console.log(firstNChars([7, 9, 0, -2]));
+console.log(firstNChars([], 3));
+console.log(firstNChars([7, 9, 0, -2], 3));
+console.log(firstNChars([7, 9, 0, -2], 6));
+console.log(firstNChars([7, 9, 0, -2], -3));
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// insert dashes between two consecutive even numbers
+
+const insertDashes = (number) => {
+  const str = String(number);
+  const result = [str[0]];
+  for (let i = 1; i < str.length; i++) {
+    if (str[i - 1] % 2 === 0 && str[i] % 2 === 0) {
+      result.push("-");
+      result.push(str[i]);
+    } else {
+      result.push(str[i]);
+    }
+  }
+  return result.join("");
+};
+
+console.log(insertDashes(125468));
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// convert uppercase to lower and vice-versa for each character
+
+const checkCase = (str) => {
+  const arr = str.split("");
+  arr.forEach((item, i) => {
+    if (item === item.toUpperCase()) {
+      arr[i] = item.toLowerCase();
+    } else if (item === item.toLowerCase()) {
+      arr[i] = item.toUpperCase();
+    }
+  });
+  return arr.join("");
+};
+
+console.log(checkCase("The Quick Brown Fox"));
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// sum of 2 arrays matching their indexes
+
+const array1 = [1, 0, 2, 3, 4];
+const array2 = [3, 5, 6, 7, 8, 13];
+
+const findSum = (arr1, arr2) => {
+  const result = [];
+  const len = arr1.length <= arr2.length ? arr2.length : arr1.length;
+
+  for (let i = 0; i < len; i++) {
+    if (!arr1[i]) {
+      result[i] = arr2[i];
+    } else if (!arr2[i]) {
+      result[i] = arr1[i];
+    } else {
+      result[i] = arr1[i] + arr2[i];
+    }
+  }
+  return result;
+};
+
+console.log(findSum(array1, array2));

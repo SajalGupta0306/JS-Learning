@@ -26,3 +26,26 @@ const flattenObj = (obj, ans = {}) => {
 };
 
 /* console.log(flattenObj(obj)); */
+
+// flatten an object by adding prefix
+const flattenWithPrefix = (obj, prefix, output = {}) => {
+  for (const key in obj) {
+    const val = obj[key];
+    const newKey = prefix ? prefix + "_" + key : key;
+    if (val && typeof val === "object") {
+      const newObj = flatten(val, newKey, output);
+      output = {
+        ...output,
+        ...newObj,
+      };
+    } else {
+      output = {
+        ...output,
+        [newKey]: val,
+      };
+    }
+  }
+  return output;
+};
+
+console.log(flattenWithPrefix(obj, "test"));

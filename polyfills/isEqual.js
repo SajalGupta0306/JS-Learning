@@ -1,39 +1,55 @@
 function isEqual(obj1, obj2) {
-  function getType(obj) {
-    return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase();
+  const obj1Type = getType(obj1);
+  const obj2Type = getType(obj2);
+
+  if (obj1Type !== obj2Type) {
+    return false;
   }
 
-  function areArraysEqual() {
-    if (obj1.length !== obj2.length) return false;
-    for (let i = 0; i < obj1.length; i++) {
-      if (!isEqual(obj1[i], obj2[i])) return false;
+  if (obj1Type === "array" || obj2Type === "array") {
+    return areArraysEqual(obj1, obj2);
+  } else if (obj1Type === "object" || obj2Type === "object") {
+    return areObjectsEqual(obj1, obj2);
+  } else if (obj1Type === "function" || obj2Type === "function") {
+    return areFunctionsEqual(obj1, obj2);
+  }
+  return arePrimativesEqual(obj1, obj2);
+}
+
+function getType(obj) {
+  return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase();
+}
+
+function areArraysEqual(obj1, obj2) {
+  if (obj1.length !== obj2.length) {
+    return false;
+  }
+  for (let i = 0; i < obj1.length; i++) {
+    if (!isEqual(obj1[i], obj2[i])) {
+      return false;
     }
-    return true;
   }
+  return true;
+}
 
-  function areObjectsEqual() {
-    if (Object.keys(obj1).length !== Object.keys(obj2).length) return false;
-    for (let key in obj1) {
-      if (Object.prototype.hasOwnProperty.call(obj1, key)) {
-        if (!isEqual(obj1[key], obj2[key])) return false;
+function areObjectsEqual(obj1, obj2) {
+  if (Object.keys(obj1).length !== Object.keys(obj2).length) {
+    return false;
+  }
+  for (const key in obj1) {
+    if (Object.prototype.hasOwnProperty.call(obj1, key)) {
+      if (!isEqual(obj1[key], obj2[key])) {
+        return false;
       }
     }
-    return true;
   }
+  return true;
+}
 
-  function areFunctionsEqual() {
-    return obj1.toString() === obj2.toString();
-  }
+function areFunctionsEqual(obj1, obj2) {
+  return obj1.toString() === obj2.toString();
+}
 
-  function arePrimativesEqual() {
-    return obj1 === obj2;
-  }
-
-  let type = getType(obj1);
-  if (type !== getType(obj2)) return false;
-
-  if (type === "array") return areArraysEqual();
-  if (type === "object") return areObjectsEqual();
-  if (type === "function") return areFunctionsEqual();
-  return arePrimativesEqual();
+function arePrimativesEqual(obj1, obj2) {
+  return obj1 === obj2;
 }
