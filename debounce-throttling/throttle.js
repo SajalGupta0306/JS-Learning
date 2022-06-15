@@ -12,7 +12,7 @@ function displayWindowSize() {
 const throttleFn = (callback, delay) => {
   let firstTimeApiCalled = true;
   return function (...args) {
-    let context = this;
+    const context = this;
     if (firstTimeApiCalled) {
       callback.apply(context, args);
       firstTimeApiCalled = false;

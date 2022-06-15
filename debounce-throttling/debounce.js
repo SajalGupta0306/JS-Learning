@@ -16,7 +16,7 @@
 const debounceFn = (callback, delay) => {
   let timer = null;
   return function (...args) {
-    let context = this;
+    const context = this;
     if (timer) {
       clearTimeout(timer);
     }

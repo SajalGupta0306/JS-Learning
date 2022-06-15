@@ -53,7 +53,7 @@ console.log(`Factorial of ${t} is ${memoFact(t)}`);
 
 // Memoize a Function
 function memoize(func) {
-  let cache = {};
+  const cache = {};
   return function (...args) {
     const argsIndex = JSON.stringify(args);
     if (!cache[argsIndex]) {
@@ -63,10 +63,10 @@ function memoize(func) {
   };
 }
 
-const clumsysquare = memoize((num1, num2) => {
+const clumsysquare = (num1, num2) => {
   for (let i = 1; i <= 100000000; i++);
   return num1 * num2;
-});
+};
 
 const result = memoize(clumsysquare);
 

@@ -41,7 +41,8 @@ function sampler(fn, count, thisContext) {
   let counter = 0;
   return function (...args) {
     const context = this;
-    if (++counter !== count) {
+    counter += 1;
+    if (counter !== count) {
       return;
     }
     fn.apply(context || thisContext, args);
@@ -80,7 +81,8 @@ const toNumber = (str) => {
   const zeroAscii = "0".charCodeAt(0);
   let sum = 0;
   for (const char of str) {
-    sum = sum * 10 + char.charCodeAt(0) - zeroAscii;
+    const charAscii = char.charCodeAt(0);
+    sum = sum * 10 + charAscii - zeroAscii;
   }
   return sum;
 };
@@ -122,12 +124,13 @@ const union = (a1, a2) => {
 // Intersection of two arrays
 
 const intersection = (a1, a2) => {
-  return a1.filter((elem) => {
+  const a3 = a1.filter((elem) => {
     if (a2.includes(elem)) {
       return elem;
     }
     return null;
   });
+  return a3;
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -172,7 +175,7 @@ console.log(move([10, 20, 30, 40, 50], 0, 2));
 // print first N Chars of an array
 
 function firstNChars(arr, n) {
-  let result = [];
+  const result = [];
   if (n === null || typeof n === "undefined" || n === 0) {
     return arr[0];
   }

@@ -9,17 +9,30 @@ const obj2 = {
   loves: "Javascript",
 };
 
+// 1.
 const mergeObj = (...args) => {
   const result = {};
-  for (let i = 0; i < args.length; i++) {
-    merge(args[i]);
+  for (const item of args) {
+    merge(item);
   }
 
   function merge(obj) {
-    for (let key in obj) {
+    for (const key in obj) {
       const value = obj[key];
       result[key] = value;
     }
+  }
+  return result;
+};
+
+// 2.
+const mergeObj2 = (...args) => {
+  let result = {};
+  for (const item of args) {
+    result = {
+      ...result,
+      ...item,
+    };
   }
   return result;
 };

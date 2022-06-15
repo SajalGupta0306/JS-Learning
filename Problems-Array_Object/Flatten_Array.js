@@ -14,7 +14,7 @@ const arr = [[0], 1, 2, 3, [4, 5, [6]], [7, 8], [9], [10]];
 /* console.log(flatten(arr)); */
 
 // flattened an array with depth
-function* flattenWithDepth(array, depth = 1) {
+function* flattenWithDepth(array, depth) {
   if (depth === null || typeof depth === "undefined") {
     depth = Infinity;
   }

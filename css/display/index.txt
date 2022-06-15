@@ -1,0 +1,5 @@
+a.	Block – take the entire width of the page , always start in a new line. Eg - Div, table, ul
+
+b.	Inline – only occupy the width of the content, starts in the same line. It doesn’t takes height and width properties. Eg – span
+
+c.	Inline-block -  use inline elements and adjust the height and width
