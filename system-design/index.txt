@@ -2,12 +2,67 @@
 2. load balancing
 3. caching
 4. cache invalidation
-5. CDN
-5. ACID
+5. CDN - geographically distributed data stores for fast retrieval
+6. ACID
+
+Micro-Frontend
 
 
+Communication Protocols
+Long Polling - used for analytics and dashboards
+Web sockets - used for real time scenarios - chat application, google docs etc etc
+SSE - Server sent events - eg facebook notifications
 
 
+Service Workers
+offline support - Eg: google chrome jumping game when no internet
+- show existing pages OR
+- show static data
+
+Accessibility
+- Keyboard Accessibility
+- Screen Readers
+
+Consistency
+- JS solution works in some browsers and not all - support of polyfill
+- CSS not working in all browsers - 
+- use of babel for backward support
+
+
+Client side considerations
+- Title and description of the application
+- Performance of the application
+- meta  
+- quality content
+SEO - Search Engine Optimization
+
+
+Logging and Monitoring
+- Error Logging
+- Features Usage - How much is actually getting used in entire application
+- User tracking - types of users visiting the application
+- system capability - check if system needs to scaled in run time to avoid lagging
+
+
+HTTP Caching - caching static assets > images, CSS, JS etc
+In memory caching - for a limited time
+Support of local/ session storage
+Support of cookies for storing user preferences
+
+Security - 
+Authentication and Authorization
+CORS 
+
+Performance and Optimization-
+- loading priority content in the application on page load
+- support of SSR 
+- use of service Workers and web Workers
+- web vitals
+
+Testing
+- Unit Testing
+- Integration Testing
+- E2E Testing
 
 step 1 : discuss on the functional and non - functional requirements 
 step 2: discuss the use-case by assuming the number of users and how many times application will be accessed 
@@ -16,3 +71,5 @@ step 4: discuss on the apis required to communicate between the FE and BE
 step 5: discuss on the db models which might be needed and link with DB (SQL or NOSQL) / Object Store - blob storage like S3 (Storing Images)
 step 6: design a HLD
 step 7: scale the HLD by adding load balancer,  doing horizontal scaling or adding caching and CDN
+
+

@@ -18,7 +18,7 @@ var p3 = 20;
 
 Promise.myAllSettled = function (promises) {
   return new Promise((resolve, reject) => {
-    let result = [];
+    const result = [];
     promises.forEach((promise) => {
       Promise.resolve(promise)
         .then((val) => {

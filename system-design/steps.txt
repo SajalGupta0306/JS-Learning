@@ -6,6 +6,7 @@ broadly categorize the problem in below steps:
 4. Data entities - basically metadata for the table data which are used.
 5. Data APIs -  GET/POST api endpoints which will be consumed in Frontend  (REST/GRAPHQL)
 6. Communication Protocols between  Client to server connection - long polling or web sockets or sse (server sent events)
+    
 7. Support for infinite scroll/ pagination - use-cases specific, not applicable for all situations
 8. Optimization - Network, Javascript
     Network - Use CDN for cahing images and videos, use HTTP2 protocol (supports multiplexing - parallel connections), 
@@ -20,6 +21,3 @@ broadly categorize the problem in below steps:
     3. Alt atribute for images
     4. support for hot keys which fulfill basic functionalities
     5. aria-liv for live fields change
-
-
-

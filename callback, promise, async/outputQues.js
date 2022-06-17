@@ -1,6 +1,8 @@
 const p1 = new Promise((resolve) => setTimeout(resolve));
 
-new Promise((resolve) => resolve(p1)).then(() => {
+const x = new Promise((resolve) => resolve(p1));
+
+x.then(() => {
   console.log("tick 3");
 });
 
