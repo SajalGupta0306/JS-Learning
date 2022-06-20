@@ -17,11 +17,9 @@
     </div>
     <script>
       const a = document.getElementById("test");
-      console.time();
-      console.log(a.innerHTML);
-      console.log(a.innerText);
-      console.log(a.textContent);
-      console.timeEnd();
+      console.log(a.innerHTML); // returns text along with HTML
+      console.log(a.innerText); // returns plain text with no formatting
+      console.log(a.textContent); // returns plain text with formatting
     </script>
   </body>
 </html>

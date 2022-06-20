@@ -115,7 +115,6 @@ const union = (a1, a2) => {
     if (!a2.includes(elem)) {
       return elem;
     }
-    return null;
   });
   return [...a3, ...a2];
 };
@@ -128,7 +127,6 @@ const intersection = (a1, a2) => {
     if (a2.includes(elem)) {
       return elem;
     }
-    return null;
   });
   return a3;
 };
@@ -141,13 +139,11 @@ const difference = (a1, a2) => {
     if (!a2.includes(value)) {
       return elem;
     }
-    return null;
   });
   const a4 = a2.filter((elem) => {
     if (!a1.includes(elem)) {
       return elem;
     }
-    return null;
   });
   return [...a3, ...a4];
 };

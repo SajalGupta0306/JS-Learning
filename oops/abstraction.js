@@ -1,10 +1,10 @@
-function Employee(name, age, basicSal) {
+function Employee(name, age, basic) {
   this.name = name;
   this.age = age;
-  this.basicSal = basicSal;
+  const basicSal = basic;
   const bonus = 20000;
   this.getTotalSalaryWithBonus = function () {
-    console.log(`total Salary is ${this.basicSal + bonus}`);
+    console.log(`total Salary is ${basicSal + bonus}`);
   };
 }
 

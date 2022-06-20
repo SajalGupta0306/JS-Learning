@@ -3,10 +3,11 @@
 // Throttling will delay executing a function. It will reduce the notifications of an event that fires multiple times.
 
 function displayWindowSize() {
-  var w = document.documentElement.clientWidth;
-  var h = document.documentElement.clientHeight;
+  console.log("inside");
+  const width = document.documentElement.clientWidth;
+  const height = document.documentElement.clientHeight;
   document.getElementById("result").innerHTML =
-    "Width: " + w + ", " + "Height: " + h;
+    "Width: " + width + ", " + "Height: " + height;
 }
 
 const throttleFn = (callback, delay) => {

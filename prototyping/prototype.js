@@ -1,4 +1,8 @@
 // prototyping and prototyping chain
+
+// The prototype object is special type of enumerable object to which additional properties can be attached to it which will be shared 
+// across all the instances of it's constructor function.
+
 // Prototype chaining is used to build new types of objects based on existing ones. It is similar to inheritance in a class based language.
 
 // array
@@ -58,7 +62,8 @@ pet.shout(); // germanShepard is bowing.
 pet.constructor; // returns Animal
 Dog.prototype.constructor; // returns Animal
 
-// These four things you should remember about prototypical inheritance.
+// These fo
+ur things you should remember about prototypical inheritance.
 // Class properties are bound using this
 // Class methods are bound using prototype object
 // To inherit properties, use call function passing "this" object
