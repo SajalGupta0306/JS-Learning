@@ -1,1 +1,7 @@
 https://youtu.be/MwGHiVl-gqk?t=711
+
+  o static - Default property. Elements are not affected by the TBLR properties.
+  o relative - Positioned relative to its normal position. Elements are adjusted by the TBLR properties.
+  o absolute - Positioned relative to the nearest positioned (position with value = relative) ancestor. 
+               If it has no positioned ancestors, it uses the document body, and moves along with page scrolling.
+  o fixed - Positioned relative to the viewport, it always stays in the same place even if the page is scrolled.
