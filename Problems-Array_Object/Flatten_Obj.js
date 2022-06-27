@@ -34,10 +34,7 @@ const flattenObjPrefix = (obj, prefix, output = {}) => {
     const newKey = prefix ? prefix + "_" + key : key;
     if (val && typeof val === "object") {
       if (Array.isArray(val)) {
-        output = {
-          ...output,
-          [newKey]: val,
-        };
+        output[newKey] = val;
       } else {
         const newObj = flattenObjPrefix(val, newKey, output);
         output = {
@@ -46,10 +43,7 @@ const flattenObjPrefix = (obj, prefix, output = {}) => {
         };
       }
     } else {
-      output = {
-        ...output,
-        [newKey]: val,
-      };
+      output[newKey] = val;
     }
   }
   return output;

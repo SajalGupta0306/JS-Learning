@@ -235,7 +235,6 @@ const array2 = [3, 5, 6, 7, 8, 13];
 const findSum = (arr1, arr2) => {
   const result = [];
   const len = arr1.length <= arr2.length ? arr2.length : arr1.length;
-
   for (let i = 0; i < len; i++) {
     if (!arr1[i]) {
       result[i] = arr2[i];
@@ -249,3 +248,77 @@ const findSum = (arr1, arr2) => {
 };
 
 console.log(findSum(array1, array2));
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// reduce string to a single character by summing up
+
+function getNum(str) {
+  let sum = 0;
+  if (str.length === 1) {
+    return str;
+  }
+  for (let i = 0; i < str.length; i++) {
+    sum += Number(str[i]);
+  }
+  return getNum(String(sum));
+}
+
+const strNum = "12345789";
+console.log(getNum(strNum));
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// remove elements from array
+
+function remove_array_element(arr, num) {
+  const index = arr.indexOf(num);
+  arr.splice(index, 1);
+  return arr;
+}
+
+console.log(remove_array_element([2, 5, 9, 6], 5));
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// return max occuring element from array
+
+function getMax(arr1) {
+  const temp = {};
+  arr1.forEach((item) => {
+    if (!temp[item]) {
+      temp[item] = 1;
+    } else {
+      temp[item] += 1;
+    }
+  });
+  const max = Math.max(...Object.values(temp));
+  for (const key in temp) {
+    if (temp[key] === max) {
+      return key;
+    }
+  }
+}
+
+var arrData = [3, "a", "a", "a", 2, 3, "a", 3, "a", 2, 4, 9, 3];
+console.log(getMax(arrData));
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// return largest common starting substring
+
+function longest_common_substring(arr) {
+  arr.sort((a, b) => {
+    if (a.length < b.length) {
+      return -1;
+    } else {
+      return 1;
+    }
+  });
+  let shortest = arr[0];
+  while (!arr.every((elem) => elem.includes(shortest))) {
+    if (shortest.length === 0) {
+      return;
+    }
+    shortest = shortest.slice(0, -1);
+  }
+  return shortest;
+}
+
+console.log(longest_common_substring(["improper", "imro"]));
