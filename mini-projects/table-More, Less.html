@@ -1,11 +1,12 @@
-<html>
+<!DOCTYPE >
+<html lang="en">
   <head>
+    <title>Table</title>
     <style>
       .liStyle {
         border-bottom: 1px solid;
         width: 15rem;
       }
-
       #test {
         border: 1px solid;
       }
@@ -47,15 +48,12 @@
       btn.addEventListener("click", function () {
         if (btn.innerText === "Show Less") {
           initCount = 10;
+          btn.innerText = "Show More";
         } else if (btn.innerText === "Show More") {
           initCount += 10;
+          btn.innerText = "Show Less";
         }
         display(initCount);
-        if (initCount > 10) {
-          btn.innerText = "Show Less";
-        } else {
-          btn.innerText = "Show More";
-        }
       });
     </script>
   </body>

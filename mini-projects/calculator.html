@@ -39,7 +39,7 @@
         cursor: pointer;
       }
 
-       #calc {
+      #calc {
         width: 250px;
         border: 2px solid black;
         border-radius: 3px;
@@ -52,7 +52,7 @@
     <h1>Calculator Program in JavaScript</h1>
     <div class="formstyle">
       <form name="form1">
-        <input id="calc" type="text" name="answer" /> 
+        <input id="calc" type="text" name="answer" />
         <br />
         <br />
         <input type="button" value="1" onclick="form1.answer.value += '1' " />
@@ -73,9 +73,18 @@
         <input type="button" value="/" onclick="form1.answer.value += '/' " />
         <input type="button" value="0" onclick="form1.answer.value += '0' " />
         <input type="button" value="." onclick="form1.answer.value += '.' " />
-        <input type="button" value="=" onclick="form1.answer.value = eval(form1.answer.value) "/>
+        <input
+          type="button"
+          value="="
+          onclick="form1.answer.value = eval(form1.answer.value) "
+        />
         <br />
-        <input type="button" value="Clear Input" onclick="form1.answer.value = ' ' " id="clear"/>
+        <input
+          type="button"
+          value="Clear Input"
+          onclick="form1.answer.value = '' "
+          id="clear"
+        />
         <br />
       </form>
     </div>

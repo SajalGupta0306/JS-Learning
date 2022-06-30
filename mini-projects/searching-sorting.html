@@ -14,7 +14,10 @@
         const liList = ulList.getElementsByTagName("li");
         for (let i = 0; i < liList.length; i++) {
           if (
-            liList[i].innerText.toLowerCase().includes(inputVal.toLowerCase())
+            liList[i].innerText
+              .toLowerCase()
+              .trim()
+              .includes(inputVal.toLowerCase().trim())
           ) {
             liList[i].style.display = "";
           } else {
@@ -46,7 +49,7 @@
           // sortedList.reverse();
         }
         for (let i = 0; i < sortedList.length; i++) {
-          liList[i].innerHTML = sortedList[i];
+          liList[i].innerText = sortedList[i];
         }
       };
     </script>

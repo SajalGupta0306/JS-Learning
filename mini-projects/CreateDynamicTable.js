@@ -34,7 +34,6 @@ const createTable = (data) => {
 const sortData = (columnToSort) => {
   const columnDataType = typeof personData[0][columnToSort];
   sortDirection = !sortDirection;
-
   switch (columnDataType) {
     case "number":
       sortByNumber(sortDirection, columnToSort);

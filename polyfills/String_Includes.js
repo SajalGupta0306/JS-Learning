@@ -8,4 +8,4 @@ String.prototype.myIncludes = function (search, start) {
   return this.indexOf(search, start) !== -1;
 };
 
-console.log("abc".myIncludes("ab", 1)); // false
+console.log("abc".myIncludes("ab", 0)); // true

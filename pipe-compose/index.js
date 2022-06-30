@@ -15,14 +15,12 @@ function subBy2(val) {
   return val - 2;
 }
 
-// const result = addby2(4);
-// const result1 = mulBy2(result);
-// const final = subBy2(result1);
-
-// console.log(final);
+const result = addby2(4);
+const result1 = mulBy2(result);
+const final = subBy2(result1);
+console.log(final);
 
 // With pipe
-
 // const pipe =
 //   (...functions) =>
 //   (value) => {
