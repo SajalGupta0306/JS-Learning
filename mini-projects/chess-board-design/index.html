@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      #grid {
+        height: 350px;
+        width: 350px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1px;
+        margin: 5px;
+      }
+
+      .box {
+        height: 40px;
+        width: 40px;
+        border: 1px solid black;
+      }
+
+      .black {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="grid"></div>
+  </body>
+  <script>
+    const main = document.querySelector("#grid");
+    for (let i = 1; i <= 8; i++) {
+      const row = document.createElement("div");
+      row.className = "row";
+      for (let j = 1; j <= 8; j++) {
+        const box = document.createElement("div");
+        box.className = "box";
+        if ((i % 2 !== 0 && j % 2 === 0) || (i % 2 === 0 && j % 2 !== 0)) {
+          box.className += " black";
+        }
+        row.appendChild(box);
+      }
+      main.appendChild(row);
+    }
+  </script>
+</html>

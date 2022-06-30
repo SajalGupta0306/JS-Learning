@@ -321,4 +321,4 @@ function longest_common_substring(arr) {
   return shortest;
 }
 
-console.log(longest_common_substring(["improper", "imro"]));
+console.log(longest_common_substring(["improper", "ampo"]));
