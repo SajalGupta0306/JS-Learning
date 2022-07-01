@@ -1,0 +1,7 @@
+CSS Selector	                                                        Description
+*	                                                                    Lowest specificity of all directly targeted selectors
+element	                                                                Higher specificity than universal selector and inherited styles
+attribute	                                                            Higher specificity than element selector
+class	                                                                Higher specificity than attribute, element and universal selectors
+ID	                                                                    Higher specificity than class selector
+CSS properties set directly on element,inside style attribute.	        Stronger specificity than ID selector.

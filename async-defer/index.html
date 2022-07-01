@@ -7,6 +7,22 @@
     <title>Document</title>
   </head>
   <body>
+    <!-- 
+In case of async, the script is loaded parallelly and once loaded, parsing is halted, script is compiled and after that parsing is resumed.
+ -->
+
+    <!-- 
+In case of defer, the script is loaded parallelly but compilation is only done when whole parsing is done.
+ -->
+
+    <!-- Note:  -->
+
+    <!-- 
+      Async doesn’t guarantee the order. That is, if the scripts are
+    dependent on some previous scripts, then order is not guaranteed in async.
+    But defer can be used in this case. 
+  -->
+
     <!-- Without async or defer, browser will run your script immediately, before rendering the elements that's below your script tag.
 
 With async (asynchronous), browser will continue to load the HTML page and render it while the browser load and execute the script at the same time.
