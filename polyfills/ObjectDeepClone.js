@@ -16,7 +16,8 @@ const obj = {
   phoneNumber: [100000, 200000],
 };
 
-function deepClone(object, output = {}) {
+function deepClone(object) {
+  const output = {};
   for (var key in object) {
     const val = object[key];
     if (val && typeof val === "object") {

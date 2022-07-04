@@ -1,4 +1,4 @@
-const value = "big black bug bit a big black dog on his big black nose";\
+const value = "big black bug bit a big black dog on his big black nose";
 
 const findDuplicateWords = (str) => {
   const strArr = str.split(" ");

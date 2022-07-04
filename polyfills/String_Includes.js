@@ -1,5 +1,9 @@
 String.prototype.myIncludes = function (search, start) {
-  if (typeof start !== "number" || start === null) {
+  if (
+    typeof start !== "number" ||
+    start === null ||
+    typeof start === "undefined"
+  ) {
     start = 0;
   }
   if (start + search.length > this.length) {
