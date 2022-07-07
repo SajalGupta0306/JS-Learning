@@ -27,15 +27,16 @@ const pubsub = {
   },
 };
 
-const speak = (param) => {
-  console.log(`I am ${param}`);
+const method1 = (p1, p2) => {
+  console.log("I am holding " + p1 + " and " + p2);
 };
 
-const greetAll = (x, y, z) => {
-  console.log(`Hello ${x}, ${y}, ${z}`);
+const method2 = (p1, p2) => {
+  console.log("Yes, I am holding " + p1 + " and " + p2);
 };
 
-pubsub.subscribe("greet", greetAll);
-pubsub.subscribe("speak", speak);
-pubsub.unsubscribe("speak", speak);
-pubsub.publish("speak", "welcome");
+pubsub.subscribe("event1", method1);
+pubsub.subscribe("event1", method2);
+pubsub.publish("event1", "param1", "param2");
+pubsub.unsubscribe("event1", method1);
+pubsub.publish("event1", "param1", "param2");

@@ -58,6 +58,5 @@ function CalculateValue() {
   };
 }
 
-console.log(
-  CalculateValue().tens(5).tens(2).hundreds(3).thousands(4).getValue()
-);
+const answer = CalculateValue();
+console.log(answer.tens(5).tens(2).hundreds(3).thousands(4).getValue());

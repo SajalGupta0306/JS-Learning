@@ -2,7 +2,7 @@
 
 let isOn = true;
 
-document.getElementById("main").addEventListener("mousedown", function () {
+document.getElementById("main").addEventListener("click", function () {
   isOn = !isOn;
   if (isOn) {
     changeButtonStyle("on", "blue", "white");

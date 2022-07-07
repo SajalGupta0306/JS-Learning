@@ -62,4 +62,6 @@ var myVar = "foo";
   console.log("New value is: " + myVar);
 })();
 
-// Output: Original value was: undefined New value is: bar
+// Output:
+// Original value was: undefined
+// New value is: bar
