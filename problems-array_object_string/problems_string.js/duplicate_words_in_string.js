@@ -10,6 +10,6 @@ const findDuplicateWords = (str) => {
       }
     }
   }
-  return res.join(" ");
+  return res;
 };
 console.log(findDuplicateWords(value));
