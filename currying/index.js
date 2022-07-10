@@ -84,11 +84,10 @@ const curry = (func) => {
   return function insideCurry(...args) {
     if (args.length >= func.length) {
       return func(...args);
-    } else {
-      return function (...remainingArgs) {
-        return insideCurry(...args, ...remainingArgs);
-      };
     }
+    return function (...remainingArgs) {
+      return insideCurry(...args, ...remainingArgs);
+    };
   };
 };
 
