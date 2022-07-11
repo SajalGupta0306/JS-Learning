@@ -16,6 +16,11 @@
 // Adv
 // 1. Protect the variable security within the function, and strengthen encapsulation
 
+// Use-cases
+// 1. When working with Event handler
+// 2. Useful in callbacks
+// 3. Useful in functional programming: Currying
+
 function test() {
   var a = 10;
   function test1() {

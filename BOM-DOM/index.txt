@@ -1,10 +1,10 @@
-BOM
+BOM (Browser Object Model)
 - No W3C standards defined
 - each browser can have its own BOM implementation
 - Window object is part of BOM
 - history, navigator, document, location are BOM object
 
-DOM
+DOM (Document Object Model)
 - W3C standards defined
 - subset of BOM
 - Kind of API to manage HTML document

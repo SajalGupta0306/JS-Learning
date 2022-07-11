@@ -27,15 +27,19 @@ setTimeout(() => {
 }, 4000);
 
 // print hello 5 times and then stop
-let i = 1;
-const timer = setInterval(() => {
-  if (i <= 5) {
-    console.log("Hello");
-    i += 1;
-  } else {
-    clearInterval(timer);
-  }
-}, 2000);
+function printNTimes(value) {
+  let i = 1;
+  const timer = setInterval(() => {
+    if (i <= value) {
+      console.log("Hello");
+      i += 1;
+    } else {
+      clearInterval(timer);
+    }
+  }, 2000);
+}
+
+printNTimes(5);
 
 // clearAllInterval
 const MY_INTERVALS = {

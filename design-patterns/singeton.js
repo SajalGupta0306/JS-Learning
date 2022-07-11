@@ -34,7 +34,7 @@ console.log(instanceTwo);
 
 function User() {
   this.data = [];
-  if (typeof User._instance === "object") {
+  if (User._instance && typeof User._instance === "object") {
     return User._instance;
   }
   this.add = function (val) {

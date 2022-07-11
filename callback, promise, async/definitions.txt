@@ -1,3 +1,30 @@
 /// Callback Hell
 Callback hell is when you nest things inside of each other because they depend on the previous callback to being called before it can then go ahead and run, 
 when you need to run things in sequence, one after the other. It is also rendered to as "Christmas Tree" code because of how indented the code is sideways.
+
+// callback hell example
+const finishProcess = () => {
+  setTimeout(() => {
+    console.log("step 1");
+    setTimeout(() => {
+      console.log("step 2");
+      setTimeout(() => {
+        console.log("step 3");
+        setTimeout(() => {
+          console.log("Final Step");
+        }, 2000);
+      }, 2000);
+    }, 2000);
+  }, 2000);
+};
+
+finishProcess();
+
+// Callbacks
+// A callback function is a function passed into another function as an argument.
+// This function is invoked inside the outer function on completion of an action
+
+
+// Promise
+// A promise is an object that may produce a single value some time in the future with either a resolved value or a reason that it’s not resolved
+// (for example, network error). It will be in one of the 3 possible states: fulfilled, rejected, or pending.
