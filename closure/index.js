@@ -2,6 +2,11 @@
 // A closure is the combination of a function and the lexical environment within which that function was declared. i.e
 // It is an inner function that has access to the outer or enclosing function’s variables. The closure has three scope chains
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// A Closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).
+// That means, each function in JS has access to its surrounding environment (which includes variables and functions).
+
 // Own scope where variables defined between its curly brackets
 // Outer function’s variables
 // Global variables

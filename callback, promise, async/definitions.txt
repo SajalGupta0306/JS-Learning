@@ -28,3 +28,8 @@ finishProcess();
 // Promise
 // A promise is an object that may produce a single value some time in the future with either a resolved value or a reason that it’s not resolved
 // (for example, network error). It will be in one of the 3 possible states: fulfilled, rejected, or pending.
+
+// Promise vs callback
+The main difference between callbacks and promises is that you tell the executing function of what to do with callbacks when the asynchronous task concludes. 
+In contrast, in the case of promises, the executing function returns a particular object to you (the promise), 
+and then you tell the promise what needs to be done when the asynchronous task completes.
