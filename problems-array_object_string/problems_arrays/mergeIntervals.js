@@ -27,3 +27,5 @@ const data = [
 console.log(merge(data));
 
 // [[1, 6], [8, 10], [15, 18]]
+// nlogn - time
+// n - space
