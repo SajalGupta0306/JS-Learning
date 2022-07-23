@@ -14,3 +14,7 @@ innerHTML vs appendChild()
 // (innerHTML) does cause a complete rebuild of the content of the target element, which if you're appending is unnecessary.
 
 
+<meta http-equiv="refresh" content="10" />
+
+// refreshes the page automatically 10 seconds.
+// content = value in seconds

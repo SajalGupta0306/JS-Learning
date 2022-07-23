@@ -101,3 +101,21 @@ MY_TIMERS.setTimeout(() => {
 }, 1000);
 
 MY_TIMERS.clearAllTimeout();
+
+/// How to add a delay in a JavaScript loop?
+
+for (let i = 0; i < 10; i++) {
+  task(i);
+}
+
+function task(i) {
+  setTimeout(function () {
+    // Add tasks to do
+  }, 2000 * i);
+}
+
+// In the code given above you have to do 2000 * i because setTimeout method inside the loop doesn’t makes the loop pause but actually adds a delay to each iteration.
+// Remember that all the iteration start their time together.
+// Thus if we only do 2000 there, that will make all the iterations execute together and it will just give 2000 ms delay
+// in the first iteration and all other iteration will happen instantly after it.
+// Thus to avoid that we add 0 to first, 2000 to second, 4000 to third and it goes on.

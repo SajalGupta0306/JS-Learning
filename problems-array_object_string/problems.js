@@ -115,6 +115,7 @@ const union = (a1, a2) => {
     if (!a2.includes(elem)) {
       return elem;
     }
+    return;
   });
   return [...a3, ...a2];
 };
@@ -322,3 +323,13 @@ function longest_common_substring(arr) {
 }
 
 console.log(longest_common_substring(["improper", "ampo"]));
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// common elements from n arrays
+var arrays = [
+  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  [0, 2, 4, 6, 8],
+  [4, 5, 7],
+];
+const resp = arrays.reduce((p, c) => p.filter((e) => c.includes(e)));
+console.log(resp);

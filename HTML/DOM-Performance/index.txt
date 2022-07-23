@@ -1,0 +1,17 @@
+// ways to improve DOM Performance
+
+https://areknawo.com/dom-performance-case-study/
+https://pubmatic.com/blog/dom-rendering-strategies/
+
+1. Lazy Loading
+2. Virtual Scrolling
+3. Minimizing Repaints And Reflows
+4. Reduce DOM depth
+5. Optimize CSS
+
+
+
+React #
+1. Use a "windowing" library like react-window to minimize the number of DOM nodes created if you are rendering many repeated elements on the page.
+2. Minimize unnecessary re-renders using shouldComponentUpdate, PureComponent, or React.memo.
+3. Skip effects only until certain dependencies have changed if you are using the Effect hook to improve runtime performance.
