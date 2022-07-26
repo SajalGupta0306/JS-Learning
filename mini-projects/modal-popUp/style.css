@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.button {
+  background-color: coral;
+  padding: 1em 2em;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.button:hover {
+  background-color: darkolivegreen;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1; /* higher the number, more the priority */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* last value is for transparency */
+}
+
+.modal-content {
+  margin: 10% auto;
+  width: 60%;
+  /* animation to open the modal in 2 seconds */
+  animation-name: openModal;
+  animation-duration: 1s;
+}
+
+.modal-header {
+  padding: 15px;
+  background-color: coral;
+  color: white;
+}
+
+.modal-body {
+  text-align: center;
+  padding: 15px;
+  color: black;
+  background-color: white;
+  min-height: 70%;
+}
+
+.modal-footer {
+  padding: 15px;
+  background-color: coral;
+  color: white;
+}
+
+.closeBtn {
+  font-size: 25px;
+  float: right;
+  color: white;
+  border: none;
+  background: none;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+  color: darkgoldenrod;
+  cursor: pointer;
+}
+
+@keyframes openModal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
