@@ -333,3 +333,25 @@ var arrays = [
 ];
 const resp = arrays.reduce((p, c) => p.filter((e) => c.includes(e)));
 console.log(resp);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// group by a particular objet key
+
+const users = [
+  { id: 1, name: "Rahul", age: 30 },
+  { id: 7, name: "John", age: 30 },
+  { id: 3, name: "John", age: 50 },
+  { id: 4, name: "Abhi", age: 40 },
+  { id: 5, name: "Smith", age: 40 },
+];
+
+function groupBy(array, key) {
+  return array.reduce((output, obj) => {
+    const val = output[obj[key]] || [];
+    return {
+      ...output,
+      [obj[key]]: [...val, obj],
+    };
+  }, {});
+}
+console.log(groupBy(users, "name"));

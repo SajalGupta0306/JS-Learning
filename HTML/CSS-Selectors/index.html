@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* universal selector */
+      * {
+      }
+
+      /* id selector */
+      #id {
+      }
+
+      /* class selector */
+      .class {
+      }
+
+      /* tag/element selector */
+      div {
+      }
+
+      /* elements with a specific class */
+      div.red {
+        /* selects all div with class as "red" */
+      }
+
+      /* apply css to multiple elements */
+      div,
+      p {
+        /* applies css to all the divs and p tags */
+      }
+
+      /* all the child tags inside parent tag */
+      ul li {
+        /* selects all the li, irrespective of hierarchy */
+      }
+
+      /* all the direct child tags inside parent tag */
+      ul > li {
+        /* selects all the direct LI */
+      }
+
+      /* get all the immediate next siblings */
+      li.red ~ li {
+        /* selects all the LI, after the LI with class as "red" */
+      }
+
+      /* gets single immediate next siblings */
+      li.red + li {
+        /* selects a single LI, after the LI with class as "red" */
+      }
+
+      /* data attributes */
+      /* 1. matches exact string */
+      [data-text = 'true']
+      /* 2. matches string starting with  */
+      [data-text ^= 'true']
+      /* 3. matches string ending with  */
+      [data-text $= 'true']
+      /* 4. matches string anywhere with  */
+      [data-text *= 'true']
+    </style>
+  </head>
+  <body>
+    <div data-text="true"></div>
+  </body>
+</html>
