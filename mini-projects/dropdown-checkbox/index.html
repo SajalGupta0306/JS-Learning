@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <script defer src="src/index.js"></script>
+    <script>
+      let value = "";
+      const itemClicked = (event) => {
+        const label = event.target.nextElementSibling.innerText;
+        if (event.target.checked) {
+          value = label + "," + value;
+        } else {
+          value = value.replace(label + ",", "");
+        }
+        document.getElementById("myInput").value = value;
+      };
+    </script>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="search">
+        <input id="myInput" type="text" />
+        <button id="showList" class="btn">V</button>
+      </div>
+      <div id="dropdown">
+        <div class="inside">
+          <input id="item1" type="checkbox" onclick="itemClicked(event)" />
+          <label>Item 1</label>
+        </div>
+        <div class="inside">
+          <input id="item2" type="checkbox" onclick="itemClicked(event)" />
+          <label>Item 2</label>
+        </div>
+        <div class="inside">
+          <input id="item3" type="checkbox" onclick="itemClicked(event)" />
+          <label>Item 3</label>
+        </div>
+        <div class="inside">
+          <input id="item4" type="checkbox" onclick="itemClicked(event)" />
+          <label>Item 4</label>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

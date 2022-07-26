@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .test {
+        /* border: 2px solid red; */
+        margin-left: 20%;
+      }
+
+      #mainForm {
+        border: 2px solid black;
+        width: 200px;
+        height: 250px;
+      }
+
+      #input {
+        margin-top: 5px;
+        margin-left: 15px;
+      }
+
+      #clear {
+        margin-left: 25px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form id="mainForm" name="calc">
+      <input id="input" type="text" name="calInput" />
+      <br />
+      <br />
+      <div class="test">
+        <input type="button" value="1" onclick="calc.calInput.value += '1'" />
+        <input type="button" value="2" onclick="calc.calInput.value += '2'" />
+        <input type="button" value="3" onclick="calc.calInput.value += '3'" />
+        <input type="button" value="+" onclick="calc.calInput.value += '+'" />
+        <br />
+        <br />
+        <input type="button" value="4" onclick="calc.calInput.value += '4'" />
+        <input type="button" value="5" onclick="calc.calInput.value += '5'" />
+        <input type="button" value="6" onclick="calc.calInput.value += '6'" />
+        <input type="button" value="-" onclick="calc.calInput.value += '-'" />
+        <br />
+        <br />
+        <input type="button" value="7" onclick="calc.calInput.value += '7'" />
+        <input type="button" value="8" onclick="calc.calInput.value += '8'" />
+        <input type="button" value="9" onclick="calc.calInput.value += '9'" />
+        <input type="button" value="*" onclick="calc.calInput.value += '*'" />
+        <br />
+        <br />
+        <input type="button" value="/" onclick="calc.calInput.value += '/'" />
+        <input type="button" value="0" onclick="calc.calInput.value += '0'" />
+        <input type="button" value="." onclick="calc.calInput.value += '.'" />
+        <input
+          type="button"
+          value="="
+          onclick="calc.calInput.value = eval(calc.calInput.value)"
+        />
+        <br />
+        <br />
+        <input id="clear" type="button" value="Clear" />
+      </div>
+    </form>
+    <script src="src/index.js"></script>
+  </body>
+</html>

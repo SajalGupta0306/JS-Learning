@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  #result ul {
+    list-style: none;
+  }
+  
+  #result ul li {
+    width: 200px;
+    height: 30px;
+    border: 1px solid lightseagreen;
+    padding: 5px;
+  }
+  
+  #result ul li:hover {
+    background: #eee;
+  }
+  
+  form {
+    display: flex;
+    align-items: center;
+    margin: 50px;
+    flex-direction: column;
+  }
+  
+  input {
+    width: 200px;
+    height: 30px;
+  }
+  

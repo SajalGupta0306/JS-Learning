@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  #app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid;
+  }
+  
+  #div1 {
+    border-right: 1px solid blue;
+  }
+  
+  #div3 {
+    border-left: 1px solid blue;
+  }
+  
+  .line {
+    height: 200px;
+    border: 1px solid blue;
+    cursor: ew-resize;
+  }
+  
