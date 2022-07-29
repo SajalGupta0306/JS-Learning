@@ -66,52 +66,55 @@ if (responseOK) {
 // 1. Fetch
 // Based on promises rather than callbacks
 // browser based API
-(function(){
-  fetch('https://jsonplaceholder.typicode.com/todos/1')
-    .then(payload => payload.json())
-    .then(resp => {
+(function () {
+  fetch("https://jsonplaceholder.typicode.com/todos/1")
+    .then((payload) => payload.json())
+    .then((resp) => {
       console.log(resp);
     })
-    .catch(err => {
-      console.log('ERROR. Something went wrong.')
-    })
+    .catch((err) => {
+      console.log("ERROR. Something went wrong.");
+    });
 })();
 
 // 2. XHR - XMLHTTPRequest
 // It uses the older JavaScript paradigm of binding callback handlers to a request object which get invoked based on success, failure and on-progress states
 // browser based API
-(function(){
-  var xhr = new XMLHttpRequest()
-  xhr.open('GET', 'https://jsonplaceholder.typicode.com/todos/1')
+(function () {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "https://jsonplaceholder.typicode.com/todos/1");
   // This will be called after the response is received
-  xhr.onload = function() {
-    if (xhr.status !== 200) { // status code should be "200" otherwise something went wrong.
-      console.log('ERROR. Something went wrong.')
+  xhr.onload = function () {
+    if (xhr.status !== 200) {
+      // status code should be "200" otherwise something went wrong.
+      console.log("ERROR. Something went wrong.");
       return;
     }
     var payload = JSON.parse(xhr.response);
     console.log(payload);
-  }
-  xhr.onError = function() {
-    console.log('Request failed')
-  }
-  xhr.send()
+  };
+  xhr.onError = function () {
+    console.log("Request failed");
+  };
+  xhr.send();
 })();
 
 // 3. AJAX
 // jQuery based solution for making network requests in the browser.
 // Similar to XHR, based on callback handlers
-(function(){
-  $.ajax({
-    url: 'https://jsonplaceholder.typicode.com/todos/1',
-    type: 'GET',
-    success: function(resp){ // success callback
+(function () {
+  jQuery.ajax({
+    url: "https://jsonplaceholder.typicode.com/todos/1",
+    type: "GET",
+    success: function (resp) {
+      // success callback
       console.log(resp);
     },
-    error: function(resp){ // Error callback
-      console.log('ERROR. Something went wrong.')
-    }
-  })
+    error: function (resp) {
+      // Error callback
+      console.log("ERROR. Something went wrong.");
+    },
+  });
 })();
 
 // 4. Axios

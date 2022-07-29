@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <form novalidate id="regForm" class="form">
+        <div id="first" class="parent">
+          <label class="details"
+            >First Name
+            <!-- <abbr title="Mandatory Field" aria-label="required">*</abbr> -->
+          </label>
+          <div>
+            <input
+              type="text"
+              placeholder="Enter your first name"
+              required
+              minlength="3"
+            />
+          </div>
+          <div class="error"></div>
+        </div>
+        <div id="second" class="parent">
+          <label class="details">Second Name</label>
+          <div>
+            <input
+              required
+              minlength="3"
+              type="text"
+              placeholder="Enter your second name"
+              required
+            />
+          </div>
+          <div class="error"></div>
+        </div>
+        <div id="email" class="parent">
+          <label class="details">Email</label>
+          <div>
+            <input
+              required
+              data-email="true"
+              type="email"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div class="error"></div>
+        </div>
+        <div id="password" class="parent">
+          <label class="details">Password</label>
+          <div>
+            <input
+              required
+              minlength="8"
+              type="password"
+              placeholder="Enter your password"
+            />
+          </div>
+          <div class="error"></div>
+        </div>
+        <div id="confirm-password" class="parent">
+          <label class="details">Confirm Password</label>
+          <div>
+            <input
+              required
+              minlength="8"
+              type="password"
+              placeholder="Confirm your password"
+            />
+          </div>
+          <div class="error"></div>
+        </div>
+        <div id="dob" class="parent">
+          <label class="details">D.O.B</label>
+          <div>
+            <input min="1900-01-01" max="2100-12-31" type="date" />
+          </div>
+          <div class="error"></div>
+        </div>
+        <div id="phone" class="parent">
+          <label class="details">Phone</label>
+          <div>
+            <input required type="number" placeholder="Phone" />
+          </div>
+          <div class="error"></div>
+        </div>
+        <div id="address" class="parent">
+          <label class="details">Address</label>
+          <div>
+            <textarea rows="2"></textarea>
+          </div>
+          <div class="error"></div>
+        </div>
+        <div id="country" class="parent">
+          <label class="details">Country</label>
+          <div><select required></select></div>
+          <div class="error"></div>
+        </div>
+        <!-- <div id="gender" class="parent">
+            <label class="details">Gender</label>
+            <div class="radios">
+              <label>
+                <input required type="radio" name="gender" />
+                Male
+              </label> -->
+
+        <!-- <input type="radio" name="gender" />
+              <label> Male </label> -->
+
+        <!-- <label style="margin-left: 15px">
+                <input required type="radio" name="gender" />
+                Female
+              </label>
+            </div> -->
+        <!-- </div> -->
+        <br />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

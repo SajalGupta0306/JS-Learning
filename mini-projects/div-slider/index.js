@@ -16,6 +16,8 @@ document.addEventListener("mouseup", function (e) {
   div3.removeEventListener("mousemove", div3Event);
 });
 
+// The offsetX property returns the x-coordinate the mouse cursor, relative to the target element.
+
 const div1Event = function (e) {
   const div1Width = div1.offsetWidth;
   const div3Width = div3.offsetWidth;

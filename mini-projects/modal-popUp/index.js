@@ -1,3 +1,5 @@
+// https://stackblitz.com/edit/js-3kasss?file=index.html,index.js,style.css
+
 const clickBtn = document.querySelector("#modelBtn");
 const closeBtn = document.querySelector("#close");
 const modal = document.querySelector("#simpleModal");

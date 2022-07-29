@@ -1,67 +1,75 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 nav {
-    background-color: lightslategrey;
+  background-color: lightslategrey;
+}
+
+nav > ul {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
 }
 
 nav ul li {
-    list-style: none;
-    line-height: 40px;
-    height: 40px;
-    width: 100%;
+  list-style: none;
+  width: 100%;
+}
+
+/* addresses the hover on root level*/
+nav ul li:hover {
+  background-color: rgb(39, 177, 101);
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: white;
+  /* remove the underline */
+  text-decoration: none;
+  color: white;
 }
 
-nav>ul {
-    display: flex;
-    justify-content: space-evenly;
-    text-align: center;
-}
-
+/* addresses the sub-menu for Services */
 nav ul li ul li {
-    display: none;
+  display: none;
 }
 
+/* addresses the sub-menu for Services to show on hover */
 nav ul li:hover ul li {
-    display: block;
-    background-color: rgba(27, 34, 34, 0.4);
-    opacity: 1;
-    width: 100%;
+  display: block;
+  background-color: lightslategrey;
+  min-width: 100%;
 }
 
-.sub-menu {
-    display: none;
-}
-
-.menu-list {
-    position: relative;
-}
-
-.menu-list:hover .sub-menu {
-    display: block;
-    background-color: rgba(27, 34, 34, 0.4);
-    position: absolute;
-    left: 80%;
-    top: 10%;
-    width: 100%;
-}
-
-nav ul li:hover {
-    background-color: rgb(39, 177, 101);
-}
-
-.sub-menu li:hover {
-    background-color: rgb(39, 177, 101);
-}
-
+/* addresses the hover on sub-menu under Services*/
 nav ul li ul li:hover {
-    background-color: rgb(39, 177, 101);
+  background-color: rgb(39, 177, 101);
+}
+
+/* addresses the sub-menu for Identify under Services */
+.menu-list {
+  position: relative;
+}
+
+/* addresses the sub-menu for Identify under Services */
+.sub-menu {
+  display: none;
+}
+
+/* addresses the sub-menu for Identify under Services */
+.menu-list:hover .sub-menu {
+  display: block;
+  background-color: lightslategrey;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  min-width: 100%;
+}
+
+/* addresses the hover on sub-menu under Identity of Services*/
+.sub-menu li:hover {
+  background-color: rgb(39, 177, 101);
 }

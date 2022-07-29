@@ -19,7 +19,7 @@ innerHTML vs appendChild()
 // content = value in seconds
 
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode
-<!DOCTYPE html> 
+<!DOCTYPE html>
 // In HTML documents, browsers use a DOCTYPE in the beginning of the document to decide whether to handle it in quirks mode or standards mode.
 // If document type is not mentioned, browser will go to Quirks mode. 
 // Quirks mode depends upon the web browser version, If is older version then this will not support HTML5 tags
