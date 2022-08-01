@@ -4,7 +4,7 @@
 // https://jsfiddle.net/dkvrL094/3/
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Filter object with unique name and ID
+// Filter array of objects with unique value of any one object property and maintain the count of records
 
 const data = [
   { name: "freshworks1", id: 1 },
@@ -29,6 +29,21 @@ data.forEach((record) => {
   }
 });
 console.log(result);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Filter unique objects from array
+
+const dummy = [];
+const final = [];
+dummy.push(JSON.stringify(data[0]));
+final.push(data[0]);
+for (let i = 1; i < data.length; i++) {
+  if (dummy.indexOf(JSON.stringify(data[i])) < 0) {
+    dummy.push(JSON.stringify(data[i]));
+    final.push(data[i]);
+  }
+}
+console.log(final);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Run the callback function after the count interations

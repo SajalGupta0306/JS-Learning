@@ -1,7 +1,12 @@
 //spread operator : used to spread out array elements
 // rest operator: used to combine elements into an array
 
+// Rest
+// The rest operator (…) allows us to call a function with any number of arguments and then access those excess arguments as an array.
+// The rest operator also allows us in destructuring array or objects.
+
 // spread
+// The spread operator (…) allows us to expand an iterable like array into its individual elements.
 
 // used to copy the object or array and store in a new object
 const details = { name: "Sajal" };
