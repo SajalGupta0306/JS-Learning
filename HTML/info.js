@@ -32,3 +32,14 @@ innerHTML vs appendChild()
 // 2. almost standards mode - In almost standards mode, there are only a very small number of quirks implemented.
 
 // 3. full standards mode -  In full standards mode, the behavior is (hopefully) the behavior described by the HTML and CSS specifications
+
+
+// Ocument fragment
+// <div id="main"></div>
+const fragment = document.createDocumentFragment();
+for (let i = 0; i < 100; i++) {
+  const element = document.createElement('div');
+  element.innerText = "div " + (i + 1);
+  //fragment.appendChild(element);
+  document.getElementById("main").appendChild(element);
+}
