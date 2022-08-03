@@ -13,3 +13,5 @@ pseudo-elements are like virtual elements that we can treat as regular HTML elem
 The thing is that they don’t exist in the document tree or DOM. 
 This means we don’t actually type the pseudo-elements, but rather create them with CSS.
 A few common pseudo-elements are ::after, ::before and ::first-letter
+
+> style a specific part of the element.
