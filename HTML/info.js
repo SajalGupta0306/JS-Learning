@@ -34,7 +34,12 @@ innerHTML vs appendChild()
 // 3. full standards mode -  In full standards mode, the behavior is (hopefully) the behavior described by the HTML and CSS specifications
 
 
-// Ocument fragment
+// Document fragment
+// The DocumentFragment interface represents a minimal document object that has no parent.
+// It is used as a lightweight version of Document that stores a segment of a document structure comprised of nodes just like a standard document. 
+// The key difference is due to the fact that the document fragment isn't part of the active document tree structure. 
+// Changes made to the fragment don't affect the document.
+
 // <div id="main"></div>
 const fragment = document.createDocumentFragment();
 for (let i = 0; i < 100; i++) {

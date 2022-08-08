@@ -370,3 +370,45 @@ function groupBy(array, key) {
   }, {});
 }
 console.log(groupBy(users, "name"));
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// basic implementation of a streams API.
+// The user should be able to push values to a stream, and subscribe to values that are pushed to that stream.
+
+function Stream() {
+  const cache = [];
+  this.subscribe = function (fn) {
+    cache.push(fn);
+  };
+
+  this.push = function (val) {
+    cache.forEach((item) => {
+      item(val);
+    });
+  };
+}
+
+const stream = new Stream();
+stream.subscribe((value) => console.log(value));
+stream.subscribe((value) => console.log(value * 2));
+stream.subscribe((value) => console.log(value * 3));
+stream.push(2);
+
+// ---------------------------------------------------------------------------------------------------------------------
+
+function Stream1() {
+  let value = 0;
+  this.push = function (val) {
+    value = val;
+  };
+
+  this.subscribe = function (cb) {
+    cb(value);
+  };
+}
+
+const z = new Stream1();
+z.push(2);
+z.subscribe((value) => console.log(value));
+z.subscribe((value) => console.log(value * 2));
+z.subscribe((value) => console.log(value * 3));
