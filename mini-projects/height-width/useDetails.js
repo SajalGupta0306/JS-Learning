@@ -3,13 +3,13 @@ const useDetails = () => {
   console.log(4);
   const [details, setDetails] = useState({
     width: document.documentElement.offsetWidth,
-    height: document.documentElement.offsetHeight
+    height: document.documentElement.offsetHeight,
   });
 
   const test = function () {
     const dimensions = {
       width: document.documentElement.offsetWidth,
-      height: document.documentElement.offsetHeight
+      height: document.documentElement.offsetHeight,
     };
     setDetails(dimensions);
   };

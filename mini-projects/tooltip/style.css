@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+  background-image: url("https://images.dog.ceo/breeds/terrier-bedlington/n02093647_933.jpg");
+  background-size: cover;
+  position: relative;
+}
+
+.submit {
+  border: 1px solid;
+  position: relative;
+}
+
+.tooltip::before,
+.tooltip::after {
+  --scale: 0; /* way to create variable in css */
+  position: absolute;
+  top: -0.75rem;
+  left: 50%;
+  /* scale() defines a transformation that resizes an element on the 2D plane */
+  transform: translateX(-50%) translateY(-100%) scale(var(--scale));
+  transition: 150ms;
+  transform-origin: bottom center;
+}
+
+.tooltip::before {
+  content: attr(data-tooltip); /* read value of data attributes in HTML */
+  color: white;
+  /* we can specify the width to make it constant by giving value or max-content to adjust auto */
+  width: max-content;
+  padding: 5px;
+  background-color: brown;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.tooltip:hover::before,
+.tooltip:hover::after {
+  --scale: 1;
+}
+
+/* css to create a triangle */
+.tooltip::after {
+  content: "";
+  position: absolute;
+  border: 10px solid transparent;
+  border-top-color: brown;
+  transform-origin: top center;
+  top: 0.5rem;
+}
