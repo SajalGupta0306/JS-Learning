@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  display: none;
+}
+
+.content.active {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  border-bottom: 1px solid;
+}
+
+li {
+  cursor: pointer;
+  padding: 10px;
+}
+
+li.selected {
+  background-color: lightgray;
+}
+
+li:hover {
+  background-color: gray;
+}

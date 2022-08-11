@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="./style.css"></link>
+  </head>
+  <body>
+    <ul>
+        <li class="selected" data-section-target="#home">Home</li>
+        <li data-section-target="#pricing">Pricing</li>
+        <li data-section-target="#about">About</li>
+    </ul>
+
+    <div class="tab-content">
+        <!-- setting active class to section to make it default  -->
+        <div class="content active" id="home">
+            <h1>Home</h1>
+            <p>Welcome to Home Page</p>
+        </div> 
+        <div class="content" id="pricing">
+            <h1>Pricing</h1>
+            <p>Welcome to Pricing Page</p>
+        </div> 
+        <div class="content" id="about">
+            <h1>About</h1>
+            <p>Welcome to About Page</p>
+        </div> 
+    </div>
+  </body>
+</html>
