@@ -1,54 +1,49 @@
 <!DOCTYPE html>
-<html>
-
-<head>
+<html lang="en">
+  <head>
     <title>Parcel Sandbox</title>
     <meta charset="UTF-8" />
-</head>
-
-<body>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
     <div id="mainDiv">
-        <div id="form">
-            <div class="holder">
-                <label>Email</label>
-                <input id="username" class="input" onkeyup="check()" />
-            </div>
-            <div class="holder">
-                <label>Password</label>
-                <input id="pwd" type="password" class="input" onkeyup="check()" />
-            </div>
-            <input disabled id="login" type="submit" class="button" value="Login" />
+      <div id="form">
+        <div class="holder">
+          <label>Email</label>
+          <input id="username" class="input" onkeyup="check()" />
         </div>
-        <div id="message" class="center">
-            You have successfully logged in...
+        <div class="holder">
+          <label>Password</label>
+          <input id="pwd" type="password" class="input" onkeyup="check()" />
         </div>
+        <input disabled id="login" type="submit" class="button" value="Login" />
+      </div>
+      <div id="message" class="center">You have successfully logged in...</div>
     </div>
     <script>
-        const username = document.querySelector("#username");
-        const pwd = document.querySelector("#pwd");
-        const loginBtn = document.querySelector("#login");
+      const username = document.querySelector("#username");
+      const pwd = document.querySelector("#pwd");
+      const loginBtn = document.querySelector("#login");
 
-        function check() {
-            if (pwd.value && username.value) {
-                loginBtn.disabled = false;
-                loginBtn.style.cursor = "pointer";
-            } else {
-                loginBtn.disabled = true;
-                loginBtn.style.cursor = "default";
-            }
+      function check() {
+        if (pwd.value && username.value) {
+          loginBtn.disabled = false;
+          loginBtn.style.cursor = "pointer";
+        } else {
+          loginBtn.disabled = true;
+          loginBtn.style.cursor = "default";
         }
+      }
 
-        loginBtn.addEventListener("click", function (e) {
-            e.preventDefault();
-            username.value = "";
-            pwd.value = "";
-            loginBtn.disabled = true;
-            loginBtn.style.cursor = "default";
-            document.querySelector("#message").style.display = "block";
-            document.querySelector("#form").style.display = "none";
-        });
+      loginBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        // username.value = "";
+        // pwd.value = "";
+        // loginBtn.disabled = true;
+        // loginBtn.style.cursor = "default";
+        document.querySelector("#message").style.display = "block";
+        document.querySelector("#form").style.display = "none";
+      });
     </script>
-    <script src="src/index.js"></script>
-</body>
-
+  </body>
 </html>
