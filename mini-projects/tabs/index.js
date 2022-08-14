@@ -14,6 +14,7 @@ tabs.forEach((tab) => {
     });
     // adding "active" class to a specific section based on tab clicked
     targetSection.classList.add("active");
+    // adding "selected" class to a specific content based on the tab clicked
     tab.classList.add("selected");
   });
 });

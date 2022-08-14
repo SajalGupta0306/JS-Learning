@@ -1,9 +1,7 @@
-import "./styles.css";
-
 const images = [
   "https://images.dog.ceo//breeds//malamute//n02110063_1058.jpg",
   "https://images.dog.ceo//breeds//terrier-irish//n02093991_913.jpg",
-  "https://images.dog.ceo//breeds//terrier-norfolk//n02094114_981.jpg"
+  "https://images.dog.ceo//breeds//terrier-norfolk//n02094114_981.jpg",
 ];
 
 const img = document.getElementById("img");

@@ -21,7 +21,7 @@ body {
 }
 
 .submit {
-  border: 1px solid;
+  /* border: 1px solid; */
   position: relative;
 }
 
@@ -48,17 +48,17 @@ body {
   border-radius: 10px;
 }
 
-.tooltip:hover::before,
-.tooltip:hover::after {
-  --scale: 1;
-}
-
 /* css to create a triangle */
 .tooltip::after {
   content: "";
-  position: absolute;
+  /* position: absolute; */
   border: 10px solid transparent;
   border-top-color: brown;
   transform-origin: top center;
-  top: 0.5rem;
+  top: 0.2rem;
+}
+
+.tooltip:hover::before,
+.tooltip:hover::after {
+  --scale: 1;
 }

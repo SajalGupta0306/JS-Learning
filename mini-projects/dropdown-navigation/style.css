@@ -19,6 +19,7 @@ nav > ul {
 nav ul li {
   list-style: none;
   width: 100%;
+  cursor: pointer;
 }
 
 /* addresses the hover on root level*/
