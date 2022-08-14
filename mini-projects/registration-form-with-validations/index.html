@@ -12,8 +12,8 @@
     <div class="container">
       <form novalidate id="regForm" class="form">
         <div id="first" class="parent">
-          <label class="details"
-            >First Name
+          <label class="details">
+            First Name
             <!-- <abbr title="Mandatory Field" aria-label="required">*</abbr> -->
           </label>
           <div>
@@ -56,6 +56,7 @@
           <div>
             <input
               required
+              id="initial_password"
               minlength="8"
               type="password"
               placeholder="Enter your password"
@@ -63,13 +64,15 @@
           </div>
           <div class="error"></div>
         </div>
-        <div id="confirm-password" class="parent">
+        <div id="confirm_password" class="parent">
           <label class="details">Confirm Password</label>
           <div>
             <input
               required
+              id="recheck_password"
               minlength="8"
               type="password"
+              match="initial_password"
               placeholder="Confirm your password"
             />
           </div>
@@ -102,21 +105,19 @@
           <div class="error"></div>
         </div>
         <!-- <div id="gender" class="parent">
-            <label class="details">Gender</label>
-            <div class="radios">
-              <label>
-                <input required type="radio" name="gender" />
-                Male
-              </label> -->
-
+               <label class="details">Gender</label>
+               <div class="radios">
+                 <label>
+                   <input required type="radio" name="gender" />
+                   Male
+                 </label> -->
         <!-- <input type="radio" name="gender" />
-              <label> Male </label> -->
-
+               <label> Male </label> -->
         <!-- <label style="margin-left: 15px">
-                <input required type="radio" name="gender" />
-                Female
-              </label>
-            </div> -->
+               <input required type="radio" name="gender" />
+               Female
+               </label>
+               </div> -->
         <!-- </div> -->
         <br />
         <button type="submit">Submit</button>

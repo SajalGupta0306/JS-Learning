@@ -1,3 +1,8 @@
+// https://www.youtube.com/watch?v=iyngFd6f8ko
+
+// email validation
+// https://qawithexperts.com/article/javascript/email-validation-using-javascript-with-or-without-regex/317
+
 const select = document.getElementsByTagName("select")[0];
 const option = document.createElement("option");
 option.text = "No Selection";
@@ -27,7 +32,7 @@ const validateForm = (formId) => {
       isValid: (input) =>
         input.value && input.value.length >= parseInt(input.minLength, 10),
       errorMessage: (input, label) =>
-        `${label.textContent} needs to be minimum ${input.minLength} characters`,
+        `${label.textContent} needs to be minimum ${input.minLength} chars`,
     },
     {
       attribute: "data-email",
@@ -37,20 +42,40 @@ const validateForm = (formId) => {
         if (atSymbol < 1) {
           return false;
         }
-        // check for . sign
+        // check for . sign and checks for 2 chars after @ symbol
         const dot = input.value.indexOf(".");
         if (dot <= atSymbol + 2) {
           return false;
         }
         // check that the dot is not at the end
-        if (dot === input.value.length - 1) {
-          return false;
-        }
-        return true;
+        return dot !== input.value.length - 1;
       },
       errorMessage: (input, label) =>
         `${label.textContent} should be a valid email`,
     },
+    {
+      attribute: "match",
+      isValid: (input) => {
+        const matchSelector = input.getAttribute("match");
+        const matchedElem = document.querySelector(`#${matchSelector}`);
+        return (
+          matchedElem && matchedElem?.value?.trim() === input?.value?.trim()
+        );
+      },
+      errorMessage: (input, label) => {
+        const matchSelector = input.getAttribute("match");
+        const matchedElem = document.querySelector(`#${matchSelector}`);
+        const matchedLabel =
+          matchedElem.parentElement.parentElement.querySelector("label");
+        return `${label.textContent} should match ${matchedLabel.textContent}`;
+      },
+    },
+    {
+      attribute: "required",
+      isValid: (input) => input.value.trim() !== "",
+      errorMessage: (input, label) => `${label.textContent} is required`,
+    },
+
     // {
     //   attribute: 'custommaxlength',
     //   isValid: (input) =>
@@ -71,26 +96,6 @@ const validateForm = (formId) => {
     //   errorMessage: (input, label) =>
     //     `${label.textContent} should be a valid email`,
     // },
-    // {
-    //   attribute: 'match',
-    //   isValid: (input) => {
-    //     const matchSelector = input.getAttribute('match');
-    //     const matchedElem = document.querySelector(`#${matchSelector}`);
-    //     return matchedElem && matchedElem.value.trim() === input.value.trim();
-    //   },
-    //   errorMessage: (input, label) => {
-    //     const matchSelector = input.getAttribute('match');
-    //     const matchedElem = document.querySelector(`#${matchSelector}`);
-    //     const matchedLabel =
-    //       matchedElem.parentElement.parentElement.querySelector('label');
-    //     return `${label.textContent} should match ${matchedLabel.textContent}`;
-    //   },
-    // },
-    {
-      attribute: "required",
-      isValid: (input) => input.value.trim() !== "",
-      errorMessage: (input, label) => `${label.textContent} is required`,
-    },
   ];
 
   const validateSingleFormGroup = (formGroup) => {
@@ -135,8 +140,4 @@ const validateForm = (formId) => {
   });
 };
 
-debugger;
 validateForm("#regForm");
-
-// email validation
-// https://qawithexperts.com/article/javascript/email-validation-using-javascript-with-or-without-regex/317
