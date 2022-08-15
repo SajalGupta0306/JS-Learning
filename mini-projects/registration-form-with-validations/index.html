@@ -10,6 +10,7 @@
   </head>
   <body>
     <div class="container">
+      <!-- add action = "/submitForm" for submitting-->
       <form novalidate id="regForm" class="form">
         <div id="first" class="parent">
           <label class="details">
@@ -18,10 +19,10 @@
           </label>
           <div>
             <input
-              type="text"
-              placeholder="Enter your first name"
               required
               minlength="3"
+              type="text"
+              placeholder="Enter your first name"
             />
           </div>
           <div class="error"></div>
@@ -34,7 +35,6 @@
               minlength="3"
               type="text"
               placeholder="Enter your second name"
-              required
             />
           </div>
           <div class="error"></div>
@@ -95,7 +95,7 @@
         <div id="address" class="parent">
           <label class="details">Address</label>
           <div>
-            <textarea rows="2"></textarea>
+            <textarea rows="5"></textarea>
           </div>
           <div class="error"></div>
         </div>

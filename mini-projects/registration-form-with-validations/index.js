@@ -1,5 +1,7 @@
 // https://www.youtube.com/watch?v=iyngFd6f8ko
 
+// https://www.youtube.com/watch?v=vrFnwDJmvBk&list=PLpc_YvcwbxaTAg0cGvqcDVmALsipqtJDY&index=17
+
 // email validation
 // https://qawithexperts.com/article/javascript/email-validation-using-javascript-with-or-without-regex/317
 
@@ -23,7 +25,7 @@ getCountriesAndCreateOptions();
 
 // form validation
 
-const validateForm = (formId) => {
+const validateForm = (formId, callback) => {
   const formElement = document.querySelector(formId);
 
   const validationOptions = [
@@ -118,6 +120,9 @@ const validateForm = (formId) => {
       input.classList.add("border-green");
       input.classList.remove("border-red");
     }
+
+    // for submitting
+    // return !formGroupError;
   };
 
   const validateAllFormGroups = (formToValidate) => {
@@ -125,6 +130,9 @@ const validateForm = (formId) => {
     formGroups.forEach((formGroup) => {
       validateSingleFormGroup(formGroup);
     });
+
+    // for submitting
+    //return formGroups.every(formGroup => validateSingleFormGroup(formGroup));
   };
 
   Array.from(formElement.elements).forEach((element) =>
@@ -137,7 +145,29 @@ const validateForm = (formId) => {
   formElement.addEventListener("submit", function (e) {
     e.preventDefault();
     validateAllFormGroups(formElement);
+
+    // for submitting
+    // const isFormValid = validateAllFormGroups(formElement);
+    // if(isFormValid){
+    // callback(formElement);
+    //console.log("form is valid");
+    // }
   });
 };
 
+const sendToApi = (formElement) => {
+  const formObj = Array.from(formElement.elements)
+    .filter((elem) => elem.type !== "submit")
+    .reduce((acc, elem) => {
+      return {
+        ...acc,
+        [elem.id]: elem.value,
+      };
+    }, {});
+  console.log(formObj);
+};
+
 validateForm("#regForm");
+
+// for submitting
+validateForm("#regForm", sendToApi);

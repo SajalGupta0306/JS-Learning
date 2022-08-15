@@ -13,7 +13,7 @@ const oneClick = function (e) {
 };
 
 const twoClick = function (e) {
-  e.stopPropagation();
+  // e.stopPropagation();
   this.style.backgroundColor = "purple";
 };
 
