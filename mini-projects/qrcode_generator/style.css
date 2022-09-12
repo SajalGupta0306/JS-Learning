@@ -1,0 +1,8 @@
+.qrImage {
+  height: 300px;
+  width: 300px;
+}
+
+#spinner {
+  display: none;
+}
