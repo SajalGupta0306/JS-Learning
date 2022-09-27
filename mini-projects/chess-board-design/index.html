@@ -49,9 +49,11 @@
       const row = document.createElement("div");
       for (let j = 1; j <= 8; j++) {
         const box = document.createElement("div");
-        box.className = "box";
+        // box.className = "box";
+        box.classList.add("box");
         if ((i % 2 !== 0 && j % 2 === 0) || (i % 2 === 0 && j % 2 !== 0)) {
-          box.className += " black";
+          // box.className += " black";
+          box.classList.add("black");
         }
         row.appendChild(box);
       }

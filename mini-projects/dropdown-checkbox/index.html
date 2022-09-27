@@ -3,15 +3,16 @@
   <head>
     <title>Parcel Sandbox</title>
     <meta charset="UTF-8" />
-    <script defer src="src/index.js"></script>
+    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="style.css" />
     <script>
       let value = "";
       const itemClicked = (event) => {
         const label = event.target.nextElementSibling.innerText;
         if (event.target.checked) {
-          value = label + "," + value;
+          value = label + " " + value;
         } else {
-          value = value.replace(label + ",", "");
+          value = value.replace(label + " ", "");
         }
         document.getElementById("myInput").value = value;
       };

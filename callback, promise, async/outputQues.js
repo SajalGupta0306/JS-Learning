@@ -16,7 +16,7 @@ p1.then(() => {
 
 const p = new Promise((resolve) => setTimeout(resolve));
 
-Promise.resolve(a).then(() => {
+Promise.resolve(p).then(() => {
   console.log("tick 3");
 });
 

@@ -1,5 +1,3 @@
-import "./styles.css";
-
 let open = false;
 const dropdown = document.getElementById("dropdown");
 
