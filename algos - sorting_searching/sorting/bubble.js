@@ -30,4 +30,24 @@ const bubbleSort = (arr) => {
   return tArr;
 };
 
+// optimised one if array is already sorted:
+const bubbleSort = (arr) => {
+  const len = arr.length
+  const tArr = [...arr]
+  for (let i = 0; i < len - 1; i++) {
+    let isSwappingDone = false
+    for (let j = 0; j < len - 1 - i; j++) {
+      if (tArr[j] > tArr[j + 1]) {
+        ;[tArr[j + 1], tArr[j]] = [tArr[j], tArr[j + 1]]
+        isSwappingDone = true
+      }
+      if (!isSwappingDone) {
+        // means that array is already sorted, no further calculation needed.
+        break
+      }
+    }
+  }
+  return tArr
+}
+
 console.log(bubbleSort(arr));
