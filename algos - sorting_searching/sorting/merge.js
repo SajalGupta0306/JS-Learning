@@ -1,33 +1,38 @@
+// A divide-and-conquer algorithm that splits the array into two halves, recursively sorts them, and then merges the two sorted halves.
+
+// Efficient for large datasets and stable (maintains the relative order of equal elements).
+
+// Time Complexity: 
+//   Best Case: O(nlogn). 
+//   Average Case: O(nlogn). 
+//   Worst Case: O(nlogn). 
+
+// Space Complexity: 
+//   O(n) (requires additional memory for merging).
+
+
 const arr = [4, 3, 2, 5, 6, 1, 7, 2, 9, 44, 12, 65];
 
-const merge = (leftArr, rightArr) => {
-  const output = [];
-  let left = 0;
-  let right = 0;
+function mergeSort(arr) {
+  if (arr.length <= 1) return arr;
 
-  while (left < leftArr.length && right < rightArr.length) {
-    const leftElem = leftArr[left];
-    const rightElem = rightArr[right];
+  const mid = Math.floor(arr.length / 2);
+  const left = mergeSort(arr.slice(0, mid));
+  const right = mergeSort(arr.slice(mid));
 
-    if (leftElem < rightElem) {
-      output.push(leftElem);
-      left++;
+  return merge(left, right);
+}
+
+function merge(left, right) {
+  let result = [];
+  while (left.length && right.length) {
+    if (left[0] < right[0]) {
+      result.push(left.shift());
     } else {
-      output.push(rightElem);
-      right++;
+      result.push(right.shift());
     }
   }
-  return [...output, ...leftArr.slice(left), ...rightArr.slice(right)];
-};
-
-const mergeSort = (arr) => {
-  if (arr.length <= 1) {
-    return arr;
-  }
-  const middle = Math.floor(arr.length / 2);
-  const left = arr.slice(0, middle);
-  const right = arr.slice(middle);
-  return merge(mergeSort(left), mergeSort(right));
-};
+  return [...result, ...left, ...right];
+}
 
 console.log(mergeSort(arr));
