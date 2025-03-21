@@ -11,4 +11,20 @@ const insertion = (arr) => {
   return arr;
 };
 
+const insertionSort = (arr) => {
+  const n = arr.length
+  // reason to start i with 1 so that to show i as first element of unsorted array
+  for (let i = 1; i < n; i++) {
+    let currentElem = arr[i]
+    let prevIdx = i - 1
+    while (prevIdx >= 0 && arr[prevIdx] > currentElem) {
+      arr[prevIdx + 1] = arr[prevIdx]
+      prevIdx--
+    }
+    arr[prevIdx + 1] = currentElem
+  }
+  return arr
+}
+
+
 console.log(insertion(arr));
