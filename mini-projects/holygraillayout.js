@@ -1,5 +1,5 @@
 // holy grail layout
-// holygrail
+//holygrail
 
 // html
 <header class="header">Header</header>
