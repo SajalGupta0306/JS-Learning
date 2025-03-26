@@ -1,61 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+<div id="main">
+  <button class="on" id="on">ON</button>
+  <button class="off" id="off">OFF</button>
+</div>
 
-      body {
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
 
-      #main {
-        border: 1px solid blue;
-        width: 80px;
-        height: 25px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 20px;
-      }
+// css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-      .off {
-        background-color: blue;
-        border: none;
-        color: white;
-        /* width: 40px; */
-        height: 100%;
-        border-radius: 20px;
-        flex-basis: 50%;
-      }
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-      .on {
-        background-color: white;
-        border: none;
-        color: blue;
-        /* width: 40px; */
-        height: 100%;
-        border-radius: 20px;
-        flex-basis: 50%;
-      }
-    </style>
-    <script defer src="./index.js"></script>
-  </head>
-  <body>
-    <div id="main">
-      <input readonly class="on" type="button" id="on" value="ON" />
-      <input readonly class="off" type="button" id="off" value="OFF" />
-    </div>
-  </body>
-</html>
+#main {
+  border: 1px solid blue;
+  width: 80px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.on {
+  background-color: blue;
+  border: none;
+  color: white;
+  width: 50%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.off {
+  background-color: white;
+  border: none;
+  color: blue;
+  height: 100%;
+  border-radius: 20px;
+  width: 50%;
+}
