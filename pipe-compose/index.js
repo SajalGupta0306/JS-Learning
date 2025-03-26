@@ -45,6 +45,19 @@ const compose = function (...functions) {
   };
 };
 
+// async composition
+const asyncCompose = (...fns) => (x) => 
+  fns.reduceRight(
+    (acc, fn) => acc.then(fn), 
+    Promise.resolve(x)
+  );
+
+// Example usage:
+const asyncAdd5 = async (x) => x + 5;
+const asyncMultiply3 = async (x) => x * 3;
+
+asyncCompose(asyncMultiply3, asyncAdd5)(10).then(console.log); // 45
+
 const data_pipe = pipe(addby2, mulBy2, subBy2)(4);
 const data_compose = compose(addby2, mulBy2, subBy2)(4);
 console.log(data_pipe);
