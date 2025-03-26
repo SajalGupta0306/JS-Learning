@@ -34,6 +34,34 @@
 // 2. Useful in callbacks
 // 3. Useful in functional programming: Currying
 
+Practical Case:
+Encapsulation
+
+function createCounter() {
+  let count = 0;
+  
+  return {
+    increment: function() {
+      count++;
+      return count;
+    },
+    decrement: function() {
+      count--;
+      return count;
+    },
+    getCount: function() {
+      return count;
+    }
+  };
+}
+
+const counter = createCounter();
+console.log(counter.increment()); // 1
+console.log(counter.increment()); // 2
+console.log(counter.decrement()); // 1
+
+//////////////////////////////////////////////////////////////////
+
 function test() {
   var a = 10;
   function test1() {
