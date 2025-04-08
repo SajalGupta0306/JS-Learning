@@ -2,7 +2,6 @@
 // nested
 // checkbox
 
-
 import NestedCheckBox from './NestedCheckBox'
 import React from 'react'
 import {useState} from 'react'
@@ -69,6 +68,7 @@ function App() {
             data={item}
             checked={checked}
             setChecked={setChecked}
+            fullData={data}
           />
         )
       })}
