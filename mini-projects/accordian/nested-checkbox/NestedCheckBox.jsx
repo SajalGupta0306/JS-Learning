@@ -1,19 +1,33 @@
 import React from 'react'
 import {useState} from 'react'
 
-function NestedCheckBox({data, checked, setChecked}) {
+function NestedCheckBox({data, checked, setChecked, fullData}) {
   const [expand, setExpand] = useState(true)
 
   const onHandleChange = (isChecked, data) => {
     setChecked((prev) => {
       const newState = {...prev, [data.id]: isChecked}
       const checkChildren = (data) => {
-        data.children?.forEach((child) => {
-          newState[child.id] = isChecked
-          child.children.length > 0 && checkChildren(child)
-        })
+        data.children.length > 0 &&
+          data.children?.forEach((child) => {
+            newState[child.id] = isChecked
+            child.children.length > 0 && checkChildren(child)
+          })
       }
       checkChildren(data)
+
+      const updateCHeckbox = (data) => {
+        if (!data.children.length > 0) {
+          return newState[data.id] || false
+        }
+        const allChildrenChecked = data.children.every((child) => {
+          return updateCHeckbox(child)
+        })
+        newState[data.id] = allChildrenChecked
+        return allChildrenChecked
+      }
+
+      fullData.forEach((val) => updateCHeckbox(val))
       return newState
     })
   }
@@ -37,6 +51,7 @@ function NestedCheckBox({data, checked, setChecked}) {
               data={item}
               checked={checked}
               setChecked={setChecked}
+              fullData={fullData}
             />
           )
         })}
