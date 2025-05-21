@@ -71,3 +71,16 @@ test
   .catch((err) => {
     console.log("rejecting " + err);
   });
+
+// Promise.resolve polyfill
+MyPromise.resolve = (val) => {
+  return new MyPromise(function executor(res, rej) { 
+    res(val)
+  })
+}
+
+MyPromise.reject = (val) => {
+  return new MyPromise(function executor(res, rej) { 
+    rej(val)
+  })
+}
