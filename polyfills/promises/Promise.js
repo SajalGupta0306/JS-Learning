@@ -49,6 +49,15 @@ function MyPromise(executor) {
   };
 
   executor(resolve, reject);
+
+  // or
+
+  try{
+    executor(resolve, reject);
+  }catch(err){
+    reject(err)
+  }
+
 }
 
 const test = new MyPromise((res, rej) => {
