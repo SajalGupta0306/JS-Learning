@@ -5,6 +5,7 @@
 Object.groupBy = Object.groupBy || function (array, keyFn) {
   return array.reduce((acc, item) => {
     const key = keyFn(item);
+    // "If acc[key] doesn't exist yet, assign it an empty array."
     (acc[key] ||= []).push(item);
     return acc;
   }, {});
