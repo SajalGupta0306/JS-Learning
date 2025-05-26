@@ -14,6 +14,15 @@ const printName = function (location) {
   );
 };
 
+// in case of apply, pass as ...location, (rest operation) to get all params in array form
+// const printName = function (...params) {
+//   console.log(params); // this will output [] of values
+//   console.log(
+//     this.firstName + " " + this.lastName + ". He lives in " + location
+//   );
+// };
+
+
 //call()
 // 1. It is function borrowing. It takes one argument as the object on which will be acting as ‘this’ for the called function.
 // If function has arguments, then in this case, first arg of call will be object, and the rest comma separated arg will be corresponding args.
