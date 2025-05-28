@@ -1,5 +1,8 @@
 a.	Block – take the entire width of the page , always start in a new line. Eg - Div, table, ul, h1
 
-b.	Inline – only occupy the width of the content, starts in the same line. It doesn’t takes height and width properties. Eg – span
+b.	Inline – only occupy the width of the content, starts in the same line. It doesn’t takes height and width properties. 
+    Eg – span, img, strong, a, label
 
 c.	Inline-block -  use inline elements and adjust the height and width
+
+In summary, inline elements are crucial for structuring text and content within a line, while block elements help create sections and layout
