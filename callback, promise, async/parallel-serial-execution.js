@@ -97,18 +97,20 @@ function promiseDelay(delay) {
   const result = new Promise((resolve, reject) => {
     resolveMethod = resolve;
     timeout = setTimeout(() => {
-      resolve();
+      resolve('welcome');
     }, delay);
   });
   result.clear = function () {
     if (timeout) {
       clearTimeout(timeout);
-      resolveMethod();
+      resolveMethod('hello');
     }
   };
   return result;
 }
 const answer = promiseDelay(5000);
-// result.clear();
+
+answer.then((val) => console.log(val)) // this line will print 'welcome'
+answer.clear() // ignores 'welcome' and print 'hello'
 
 /* https://codesandbox.io/s/crazy-antonelli-h5wzr2?file=/src/index.js */
