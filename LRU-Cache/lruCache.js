@@ -13,6 +13,7 @@ class LRUCache {
       return -1;
     }
     const val = this.storageMap.get(key);
+    // delete operation to delete from its original place and then put in the most recent place or say on the top
     this.storageMap.delete(key);
     this.storageMap.set(key, val);
     return val;
