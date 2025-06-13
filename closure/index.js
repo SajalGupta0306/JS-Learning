@@ -28,6 +28,7 @@
 
 // Adv
 // 1. Protect the variable security within the function, and strengthen encapsulation
+// 2. Closures are essential for timers, event handlers, and async logic, where inner functions need access to outer variables.
 
 // Use-cases
 // 1. When working with Event handler
